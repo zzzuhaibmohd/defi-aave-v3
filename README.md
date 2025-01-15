@@ -4,6 +4,7 @@
   - Protocol
   - Contract architecture
 - Math
+  - Market forces
   - Interest rate model
     - utilization rate
   - Atoken liquidity index
