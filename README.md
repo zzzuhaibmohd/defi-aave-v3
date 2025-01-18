@@ -2,6 +2,7 @@
 
 - Intro
   - UI
+    - purpose
     - supply
       - APY and APR
       - interest rate model
@@ -17,15 +18,12 @@
     - net apy
     - repay
     - withdraw
-- Math
-
+- Core concepts
   - APY and APR
   - Market forces
   - Interest rate model - graph
     - utilization rate
   - Atoken liquidity index -> animation?
-  - reserve factor
-
 - Contract architecture
   - Execution flows
 - Supply
@@ -33,20 +31,23 @@
   - Exercise
 - Borrow
   - compound interest
+    - why supply -> linear and borrow -> compound -> protocol safety
   - health factor
+    - liquidation
+    - ltv
+    - liquidation threshold
     - asset price limit (liquidation price)
-  - ltv
-  - liquidation threshold
-  - Liquidation
-    - penalty
-    - close factor
-    - bonus
+  - reserve factor
   - Exercise
 - Repay
   - Exercise
 - Withdraw
+  - Conditions for withdraw (health factor)
   - Exercise
 - Liquidation
+  - penalty
+  - close factor
+  - bonus
   - Exercise
 - Flash loan simple
   - Exercise
