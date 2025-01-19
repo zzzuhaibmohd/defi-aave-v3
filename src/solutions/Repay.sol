@@ -9,22 +9,45 @@ import {POOL} from "../Constants.sol";
 contract Repay {
     IPool private constant pool = IPool(POOL);
 
-    // TODO: supply + borrow
+    function supply(address token, uint256 amount) external {
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        IERC20(token).approve(address(pool), amount);
+        pool.supply({
+            asset: token,
+            amount: amount,
+            onBehalfOf: address(this),
+            referralCode: 0
+        });
+    }
 
-    function repay(address token, uint256 amount) external {
+    function borrow(address token, uint256 amount) external {
+        // TODO:  keep token in this contract?
+        pool.borrow({
+            asset: token,
+            amount: amount,
+            // 1 = Stable interest rate
+            // 2 = Variable interest rate
+            interestRateMode: 2,
+            referralCode: 0,
+            onBehalfOf: address(this)
+        });
+    }
+
+    function calcRepayAmount(address token) public view returns (uint256) {
         IPool.ReserveData memory reserve = pool.getReserveData(token);
         IVariableDebtToken debtToken =
             IVariableDebtToken(reserve.variableDebtTokenAddress);
-        debtToken.approveDelegation(msg.sender, type(uint256).max);
+        return debtToken.balanceOf(address(this));
+    }
 
-        uint256 debt = debtToken.balanceOf(address(this));
-
-        IERC20(token).transferFrom(msg.sender, address(this), debt);
-        IERC20(token).approve(address(pool), debt);
+    function repay(address token, uint256 amount) external {
+        // TODO: transfer the difference (debt - balance in this contract)?
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        IERC20(token).approve(address(pool), amount);
 
         pool.repay({
             asset: token,
-            amount: debt,
+            amount: amount,
             interestRateMode: 2,
             onBehalfOf: address(this)
         });

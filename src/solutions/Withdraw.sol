@@ -8,12 +8,23 @@ import {POOL} from "../Constants.sol";
 contract Withdraw {
     IPool private constant pool = IPool(POOL);
 
-    function withdraw(address token, uint256 amount) external {
-        IPool.ReserveData memory reserve = pool.getReserveData(token);
-        IERC20 aToken = IERC20(reserve.aTokenAddress);
-        // TODO: use full balance in exercise somehow
-        uint256 bal = aToken.balanceOf(address(this));
+    function supply(address token, uint256 amount) external {
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        IERC20(token).approve(address(pool), amount);
+        pool.supply({
+            asset: token,
+            amount: amount,
+            onBehalfOf: address(this),
+            referralCode: 0
+        });
+    }
 
+    function getSupplyBalance(address token) external view returns (uint256) {
+        IPool.ReserveData memory reserve = pool.getReserveData(token);
+        return IERC20(reserve.aTokenAddress).balanceOf(address(this));
+    }
+
+    function withdraw(address token, uint256 amount) external {
         pool.withdraw({asset: token, amount: amount, to: address(this)});
     }
 }

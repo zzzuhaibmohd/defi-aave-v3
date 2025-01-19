@@ -18,5 +18,9 @@ contract Supply {
             referralCode: 0
         });
     }
-    // TODO: get user data
+
+    function getSupplyBalance(address token) external view returns (uint256) {
+        IPool.ReserveData memory reserve = pool.getReserveData(token);
+        return IERC20(reserve.aTokenAddress).balanceOf(address(this));
+    }
 }

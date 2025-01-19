@@ -28,6 +28,8 @@ cp .env.sample .env
   - Market forces
   - Interest rate model - graph
     - utilization rate
+  - Reserve
+  - Atoken
   - Atoken liquidity index -> animation?
 - Contract architecture
   - Execution flows

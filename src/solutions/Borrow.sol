@@ -19,13 +19,18 @@ contract Borrow {
         });
     }
 
-    function borrow(address token, uint256 amount) external {
+    // TODO:
+    function calcMaxBorrow(address token) public view returns (uint256) {
         /*
         (,, uint256 availableToBorrowUsd,,,) =
             pool.getUserAccountData(address(this));
 
         uint256 amount = availableToBorrowUsd * 1e10 * 99 / 100;
         */
+    }
+
+    function borrow(address token, uint256 amount) external {
+        require(amount <= calcMaxBorrow(token), "amount > max");
         pool.borrow({
             asset: token,
             amount: amount,
