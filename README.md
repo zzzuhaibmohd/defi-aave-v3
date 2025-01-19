@@ -1,5 +1,10 @@
 # DeFi Aave V3
 
+```
+forge build
+cp .env.sample .env
+```
+
 - Intro
   - UI
     - purpose
@@ -28,6 +33,7 @@
   - Execution flows
 - Supply
   - linear interest
+  - delegation
   - Exercise
 - Borrow
   - compound interest
@@ -38,6 +44,7 @@
     - liquidation threshold
     - asset price limit (liquidation price)
   - reserve factor
+  - debt delegation
   - Exercise
 - Repay
   - Exercise
@@ -72,6 +79,6 @@
 - [Withdraw rETH](https://etherscan.io/tx/0x7442ab56bfe90a189516f44846b93d25aa0dde3bbfba935429ac561ab34bc575)
 - [Withdraw ETH](https://etherscan.io/tx/0x748e56cfaa10b6d629bd06badfdf83b337956e640523bbb1805901e11915c517)
 
-###### Misc
+##### Misc
 
 - [DeFiLama Swap](https://swap.defillama.com/)
