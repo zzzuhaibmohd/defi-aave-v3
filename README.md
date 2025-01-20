@@ -1,8 +1,13 @@
 # DeFi Aave V3
 
-```
+```shell
+# Install
 forge build
 cp .env.sample .env
+
+# Test
+FORK_URL=...
+forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 ```
 
 - Intro

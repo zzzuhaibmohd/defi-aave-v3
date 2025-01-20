@@ -29,6 +29,9 @@ contract Borrow {
         */
     }
 
+    // TODO: get debt
+    // TODO: get health factor
+
     function borrow(address token, uint256 amount) external {
         require(amount <= calcMaxBorrow(token), "amount > max");
         pool.borrow({
