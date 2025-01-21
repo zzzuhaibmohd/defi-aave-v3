@@ -17,7 +17,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 
 - Intro
   - [ ] UI
-    - purpose
+    - use case
     - supply
       - APY and APR
       - interest rate model
@@ -28,7 +28,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - ltv
       - health factor
       - liquidation penalty, bonus, close factor
-      - emode
+      - e-mode
         - E-Mode increases your LTV for a selected category of assets.
     - net apy
     - repay
@@ -39,37 +39,43 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] Utilization rate
   - [ ] Interest rate model - graph
   - [ ] Reserve
-  - [ ] Atoken
-  - [ ] Atoken liquidity index -> animation?
+  - [ ] Atoken and debt token
+  - [ ] Liquidity index -> animation?
 - Contract architecture
-  - Execution flows
-- Supply
-  - [ ] linear interest
-  - [ ] delegation
-  - [ ] Exercise
-- Borrow
-  - [ ] compound interest
-    - why supply -> linear and borrow -> compound -> protocol safety
-  - [ ] reserve factor
-  - [ ] ltv
-  - [ ] liquidation threshold
-  - [ ] asset price limit (liquidation price)
-  - [ ] health factor
-  - [ ] debt delegation
-  - [ ] Exercise
-- Repay
-  - [ ] Exercise
-- Withdraw
-  - [ ] Conditions for withdraw (health factor)
-  - [ ] Exercise
-- Liquidation
-  - penalty
-  - close factor
-  - bonus
-  - [ ] Exercise
-- Flash loan simple
-  - [ ] Contract calls
-  - [ ] Exercise
+  - Contract architecture
+    - Flow (cache -> update state -> validation -> update interest -> execute -> check state)
+  - Supply
+    - [ ] Execution flow?
+    - [ ] linear interest
+    - [ ] delegation
+    - [ ] Exercise
+  - Borrow
+    - [ ] Execution flow?
+    - [ ] compound interest
+      - why supply -> linear and borrow -> compound -> protocol safety
+    - [ ] reserve factor
+    - [ ] ltv
+    - [ ] liquidation threshold
+    - [ ] asset price limit (liquidation price)
+    - [ ] health factor
+    - [ ] debt delegation
+    - [ ] Exercise
+  - Repay
+    - [ ] Execution flow
+    - [ ] Exercise
+  - Withdraw
+    - [ ] Execution flow
+    - [ ] Conditions for withdraw (health factor)
+    - [ ] Exercise
+  - Liquidation
+    - [ ] Execution flow
+    - penalty
+    - close factor
+    - bonus
+    - [ ] Exercise
+  - Flash loan simple
+    - [ ] Execution flow
+    - [ ] Exercise
 - Leverage and short
   - [ ] Leverage
   - [ ] Short
