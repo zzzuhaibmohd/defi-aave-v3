@@ -16,7 +16,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 ```
 
 - Intro
-  - UI
+  - [ ] UI
     - purpose
     - supply
       - APY and APR
@@ -34,44 +34,46 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - repay
     - withdraw
 - Core concepts
-  - APY and APR
-  - Market forces
-  - Interest rate model - graph
-    - utilization rate
-  - Reserve
-  - Atoken
-  - Atoken liquidity index -> animation?
+  - [ ] APY and APR
+  - [ ] Market forces
+  - [ ] Utilization rate
+  - [ ] Interest rate model - graph
+  - [ ] Reserve
+  - [ ] Atoken
+  - [ ] Atoken liquidity index -> animation?
 - Contract architecture
   - Execution flows
 - Supply
-  - linear interest
-  - delegation
-  - Exercise
+  - [ ] linear interest
+  - [ ] delegation
+  - [ ] Exercise
 - Borrow
-  - compound interest
+  - [ ] compound interest
     - why supply -> linear and borrow -> compound -> protocol safety
-  - health factor
-    - liquidation
-    - ltv
-    - liquidation threshold
-    - asset price limit (liquidation price)
-  - reserve factor
-  - debt delegation
-  - Exercise
+  - [ ] reserve factor
+  - [ ] ltv
+  - [ ] liquidation threshold
+  - [ ] asset price limit (liquidation price)
+  - [ ] health factor
+  - [ ] debt delegation
+  - [ ] Exercise
 - Repay
-  - Exercise
+  - [ ] Exercise
 - Withdraw
-  - Conditions for withdraw (health factor)
-  - Exercise
+  - [ ] Conditions for withdraw (health factor)
+  - [ ] Exercise
 - Liquidation
   - penalty
   - close factor
   - bonus
-  - Exercise
+  - [ ] Exercise
 - Flash loan simple
-  - Exercise
+  - [ ] Contract calls
+  - [ ] Exercise
 - Leverage and short
-  - Exercises
+  - [ ] Leverage
+  - [ ] Short
+  - [ ] Exercises
 
 ### Resources
 
