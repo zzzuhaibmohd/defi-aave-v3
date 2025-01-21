@@ -3,6 +3,7 @@
 ### TODO
 
 - natspec
+- NOTE: all exercise funcs are public
 
 ```shell
 # Install

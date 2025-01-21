@@ -7,9 +7,9 @@ import {IVariableDebtToken} from "../interfaces/IVariableDebtToken.sol";
 import {POOL} from "../Constants.sol";
 
 contract Repay {
-    IPool private constant pool = IPool(POOL);
+    IPool public constant pool = IPool(POOL);
 
-    function supply(address token, uint256 amount) external {
+    function supply(address token, uint256 amount) public {
         IERC20(token).transferFrom(msg.sender, address(this), amount);
         IERC20(token).approve(address(pool), amount);
         pool.supply({
@@ -20,8 +20,7 @@ contract Repay {
         });
     }
 
-    function borrow(address token, uint256 amount) external {
-        // TODO:  keep token in this contract?
+    function borrow(address token, uint256 amount) public {
         pool.borrow({
             asset: token,
             amount: amount,
@@ -33,23 +32,29 @@ contract Repay {
         });
     }
 
-    function calcRepayAmount(address token) public view returns (uint256) {
+    function getVariableDebt(address token) public view returns (uint256) {
         IPool.ReserveData memory reserve = pool.getReserveData(token);
-        IVariableDebtToken debtToken =
-            IVariableDebtToken(reserve.variableDebtTokenAddress);
-        return debtToken.balanceOf(address(this));
+        return IERC20(reserve.variableDebtTokenAddress).balanceOf(address(this));
     }
 
-    function repay(address token, uint256 amount) external {
-        // TODO: transfer the difference (debt - balance in this contract)?
-        IERC20(token).transferFrom(msg.sender, address(this), amount);
-        IERC20(token).approve(address(pool), amount);
+    function repay(address token) public returns (uint256) {
+        // msg.sender pays for interest on borrow.
+        // Transfer the difference (debt - balance in this contract)
+        uint256 bal = IERC20(token).balanceOf(address(this));
+        uint256 debt = getVariableDebt(token);
+        if (debt > bal) {
+            IERC20(token).transferFrom(msg.sender, address(this), debt - bal);
+        }
+        IERC20(token).approve(address(pool), debt);
 
-        pool.repay({
+        uint256 repaid = pool.repay({
             asset: token,
-            amount: amount,
+            // max = repay all debt
+            amount: type(uint256).max,
             interestRateMode: 2,
             onBehalfOf: address(this)
         });
+
+        return repaid;
     }
 }

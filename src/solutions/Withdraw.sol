@@ -6,9 +6,9 @@ import {IPool} from "../interfaces/IPool.sol";
 import {POOL} from "../Constants.sol";
 
 contract Withdraw {
-    IPool private constant pool = IPool(POOL);
+    IPool public constant pool = IPool(POOL);
 
-    function supply(address token, uint256 amount) external {
+    function supply(address token, uint256 amount) public {
         IERC20(token).transferFrom(msg.sender, address(this), amount);
         IERC20(token).approve(address(pool), amount);
         pool.supply({
@@ -19,12 +19,14 @@ contract Withdraw {
         });
     }
 
-    function getSupplyBalance(address token) external view returns (uint256) {
+    function getSupplyBalance(address token) public view returns (uint256) {
         IPool.ReserveData memory reserve = pool.getReserveData(token);
         return IERC20(reserve.aTokenAddress).balanceOf(address(this));
     }
 
-    function withdraw(address token, uint256 amount) external {
-        pool.withdraw({asset: token, amount: amount, to: address(this)});
+    function withdraw(address token, uint256 amount) public returns (uint256) {
+        uint256 withdrawn =
+            pool.withdraw({asset: token, amount: amount, to: address(this)});
+        return withdrawn;
     }
 }
