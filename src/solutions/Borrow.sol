@@ -1,12 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 
-import {IERC20} from "../interfaces/IERC20.sol";
+import {IERC20, IERC20Metadata} from "../interfaces/IERC20.sol";
 import {IPool} from "../interfaces/IPool.sol";
-import {POOL} from "../Constants.sol";
+import {IAaveOracle} from "../interfaces/IAaveOracle.sol";
+import {POOL, ORACLE} from "../Constants.sol";
 
 contract Borrow {
     IPool private constant pool = IPool(POOL);
+    IAaveOracle private constant oracle = IAaveOracle(ORACLE);
 
     function supply(address token, uint256 amount) external {
         IERC20(token).transferFrom(msg.sender, address(this), amount);
@@ -19,21 +21,28 @@ contract Borrow {
         });
     }
 
-    // TODO:
-    function calcMaxBorrow(address token) public view returns (uint256) {
-        /*
+    function approxMaxBorrow(address token) external view returns (uint256) {
+        // 1e8 = 1 USD
+        uint256 price = oracle.getAssetPrice(token);
+        uint256 decimals = IERC20Metadata(token).decimals();
+
         (,, uint256 availableToBorrowUsd,,,) =
             pool.getUserAccountData(address(this));
 
-        uint256 amount = availableToBorrowUsd * 1e10 * 99 / 100;
-        */
+        return availableToBorrowUsd * (10 ** decimals) / price;
     }
 
-    // TODO: get debt
-    // TODO: get health factor
+    function getHealthFactor() external view returns (uint256) {
+        (,,,,, uint256 healthFactor) = pool.getUserAccountData(address(this));
+        return healthFactor;
+    }
+
+    function getVariableDebt(address token) external view returns (uint256) {
+        IPool.ReserveData memory reserve = pool.getReserveData(token);
+        return IERC20(reserve.variableDebtTokenAddress).balanceOf(address(this));
+    }
 
     function borrow(address token, uint256 amount) external {
-        require(amount <= calcMaxBorrow(token), "amount > max");
         pool.borrow({
             asset: token,
             amount: amount,
