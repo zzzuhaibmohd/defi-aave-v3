@@ -41,6 +41,8 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] Interest rate model - graph
   - [ ] Reserve
   - [ ] Atoken and debt token
+    - rebase token
+    - 1:1
   - [ ] Liquidity index -> animation?
 - Contract architecture
   - Contract architecture

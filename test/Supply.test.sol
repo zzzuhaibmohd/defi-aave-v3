@@ -17,12 +17,12 @@ contract SupplyTest is Test {
     Supply private target;
 
     function setUp() public {
-        deal(WETH, address(this), 1e18);
-        target = new Supply();
-
         // Get aWETH address
         IPool.ReserveData memory reserve = pool.getReserveData(WETH);
         aWeth = IERC20(reserve.aTokenAddress);
+
+        deal(WETH, address(this), 1e18);
+        target = new Supply();
     }
 
     function test_supply() public {

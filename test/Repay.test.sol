@@ -23,11 +23,11 @@ contract RepayTest is Test {
         deal(WETH, address(this), 1e18);
         target = new Repay();
 
-        IPool.ReserveData memory reserve = pool.getReserveData(DAI);
-        debtToken = IERC20(reserve.variableDebtTokenAddress);
-
         weth.approve(address(target), 1e18);
         target.supply(WETH, 1e18);
+
+        IPool.ReserveData memory reserve = pool.getReserveData(DAI);
+        debtToken = IERC20(reserve.variableDebtTokenAddress);
 
         (,, uint256 availableToBorrowUsd,,,) =
             pool.getUserAccountData(address(target));

@@ -20,11 +20,11 @@ contract BorrowTest is Test {
     Borrow private target;
 
     function setUp() public {
-        deal(WETH, address(this), 1e18);
-        target = new Borrow();
-
         IPool.ReserveData memory reserve = pool.getReserveData(DAI);
         debtToken = IERC20(reserve.variableDebtTokenAddress);
+
+        deal(WETH, address(this), 1e18);
+        target = new Borrow();
 
         weth.approve(address(target), 1e18);
         target.supply(WETH, 1e18);
