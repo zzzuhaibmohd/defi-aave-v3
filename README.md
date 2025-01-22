@@ -3,6 +3,7 @@
 ### TODO
 
 - natspec
+- exercise instructions
 - NOTE: all exercise funcs are public
 
 ```shell
@@ -45,12 +46,12 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - Contract architecture
     - Flow (cache -> update state -> validation -> update interest -> execute -> check state)
   - Supply
-    - [ ] Execution flow?
+    - [ ] Execution flow
     - [ ] linear interest
-    - [ ] delegation
-    - [ ] Exercise
+    - [ ] on behalf of
+    - [x] Exercise
   - Borrow
-    - [ ] Execution flow?
+    - [ ] Execution flow
     - [ ] compound interest
       - why supply -> linear and borrow -> compound -> protocol safety
     - [ ] reserve factor
@@ -59,7 +60,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] asset price limit (liquidation price)
     - [ ] health factor
     - [ ] debt delegation
-    - [ ] Exercise
+    - [x] Exercise
   - Repay
     - [ ] Execution flow
     - [ ] Exercise
