@@ -4,6 +4,7 @@
 
 - natspec
 - exercise instructions
+  - don't use in production (tokens are locked)
 - NOTE: all exercise funcs are public
 
 ```shell
@@ -101,6 +102,8 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 - [Repay DAI tx](https://etherscan.io/tx/0x1145e9815060164ef9234bdbc6d88db97ac5dda7b1e30732dc981145604e0373)
 - [Withdraw rETH](https://etherscan.io/tx/0x7442ab56bfe90a189516f44846b93d25aa0dde3bbfba935429ac561ab34bc575)
 - [Withdraw ETH](https://etherscan.io/tx/0x748e56cfaa10b6d629bd06badfdf83b337956e640523bbb1805901e11915c517)
+
+- [Borrow ETH - waiting for liquidation](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
 
 ##### Misc
 
