@@ -76,7 +76,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - penalty
     - close factor
     - bonus
-    - [ ] Exercise
+    - [x] Exercise
   - Flash loan simple
     - [ ] Execution flow
     - [ ] Exercise
