@@ -63,7 +63,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [x] Exercise
   - Repay
     - [ ] Execution flow
-    - [ ] Exercise
+    - [x] Exercise
   - Withdraw
     - [ ] Execution flow
     - [ ] Conditions for withdraw (health factor)

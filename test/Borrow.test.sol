@@ -39,9 +39,9 @@ contract BorrowTest is Test {
         console.log("Approximate max borrow: %e", approxMaxBorrow);
         console.log("Health factor: %e", hf);
 
-        assertGt(hf, 0);
-        assertGt(approxMaxBorrow, 0);
-        assertEq(target.getVariableDebt(DAI), 0);
+        assertGt(hf, 0, "Health factor");
+        assertGt(approxMaxBorrow, 0, "Approximate max borrow");
+        assertEq(target.getVariableDebt(DAI), 0, "Variable debt before borrow");
 
         target.borrow(DAI, 100 * 1e18);
 
@@ -51,8 +51,10 @@ contract BorrowTest is Test {
         console.log("DAI balance: %e", bal);
         console.log("DAI debt: %e", debt);
 
-        assertEq(bal, 100 * 1e18);
-        assertGe(debt, bal);
-        assertEq(target.getVariableDebt(DAI), debt);
+        assertEq(bal, 100 * 1e18, "DAI balance");
+        assertGe(debt, bal, "Debt");
+        assertEq(
+            target.getVariableDebt(DAI), debt, "Variable debt after borrow"
+        );
     }
 }

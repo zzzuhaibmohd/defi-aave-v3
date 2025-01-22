@@ -29,12 +29,15 @@ contract SupplyTest is Test {
         weth.approve(address(target), 1e18);
         target.supply(WETH, 1e18);
 
-        assertEq(weth.balanceOf(address(this)), 0);
-        assertEq(weth.balanceOf(address(target)), 0);
-
-        assertGt(aWeth.balanceOf(address(target)), 0);
         assertEq(
-            target.getSupplyBalance(WETH), aWeth.balanceOf(address(target))
+            weth.balanceOf(address(this)), 0, "WETH balance of test contract"
+        );
+        assertEq(weth.balanceOf(address(target)), 0, "WETH balance of target");
+        assertGt(aWeth.balanceOf(address(target)), 0, "aWETH balance of target");
+        assertEq(
+            target.getSupplyBalance(WETH),
+            aWeth.balanceOf(address(target)),
+            "Supply balance"
         );
     }
 }
