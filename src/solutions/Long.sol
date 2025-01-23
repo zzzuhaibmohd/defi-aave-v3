@@ -55,7 +55,8 @@ contract Long is Aave, Swap {
         address collateralToken,
         uint256 collateralAmount,
         address borrowToken,
-        uint256 minSwapAmountOut
+        uint256 minSwapAmountOut,
+        bytes memory swapData
     ) public {
         // Approve this contract to pull in collateral
 
