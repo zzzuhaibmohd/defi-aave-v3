@@ -2,7 +2,7 @@
 pragma solidity 0.8.28;
 
 import {IERC20} from "../interfaces/IERC20.sol";
-import {IPool} from "../interfaces/IPool.sol";
+import {IPool} from "../interfaces/aave-v3/IPool.sol";
 import {POOL} from "../Constants.sol";
 
 contract Withdraw {

@@ -2,8 +2,8 @@
 pragma solidity 0.8.28;
 
 import {IERC20, IERC20Metadata} from "../interfaces/IERC20.sol";
-import {IPool} from "../interfaces/IPool.sol";
-import {IAaveOracle} from "../interfaces/IAaveOracle.sol";
+import {IPool} from "../interfaces/aave-v3/IPool.sol";
+import {IAaveOracle} from "../interfaces/aave-v3/IAaveOracle.sol";
 import {POOL, ORACLE} from "../Constants.sol";
 
 contract Borrow {
