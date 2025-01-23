@@ -5,10 +5,10 @@ import {IERC20} from "../interfaces/IERC20.sol";
 import {IPool} from "../interfaces/IPool.sol";
 import {POOL} from "../Constants.sol";
 
-contract AaveV3FlashLoan {
-    IPool private constant pool = IPool(POOL);
+contract Flash {
+    IPool public constant pool = IPool(POOL);
 
-    function startFlashLoan(address token, uint256 amount) external {
+    function flash(address token, uint256 amount) public {
         pool.flashLoanSimple({
             receiverAddress: address(this),
             asset: token,
@@ -24,7 +24,7 @@ contract AaveV3FlashLoan {
         uint256 fee,
         address initiator,
         bytes calldata params
-    ) external returns (bool) {
+    ) public returns (bool) {
         require(msg.sender == address(pool), "not authorized");
         require(initiator == address(this), "invalid initiator");
 
