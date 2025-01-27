@@ -6,7 +6,7 @@ import {Aave} from "../lib/Aave.sol";
 import {Swap} from "../lib/Swap.sol";
 import {Math} from "../lib/Math.sol";
 
-contract Long is Aave, Swap {
+contract LongShort is Aave, Swap {
     struct OpenParams {
         address collateralToken;
         uint256 collateralAmount;
