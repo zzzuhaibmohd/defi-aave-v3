@@ -9,7 +9,7 @@ import {Math} from "../lib/Math.sol";
 import {POOL} from "../Constants.sol";
 
 contract Long is Aave, Swap {
-    struct LongParams {
+    struct OpenParams {
         address collateralToken;
         uint256 collateralAmount;
         address borrowToken;
@@ -21,7 +21,7 @@ contract Long is Aave, Swap {
 
     // Approve this contract to pull in collateral
     // Approve this contract to borrow
-    function long(LongParams memory params)
+    function open(OpenParams memory params)
         public
         returns (uint256 collateralAmountOut)
     {

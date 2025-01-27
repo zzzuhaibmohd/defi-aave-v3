@@ -24,8 +24,6 @@ contract LongTest is Test {
     IERC20 private constant dai = IERC20(DAI);
     IPool private constant pool = IPool(POOL);
     IAaveOracle private constant oracle = IAaveOracle(ORACLE);
-    IVariableDebtToken private debtToken;
-    IERC20 private aToken;
     Long private target;
 
     function setUp() public {
@@ -33,11 +31,11 @@ contract LongTest is Test {
         target = new Long();
     }
 
-    function test_long_and_close() public {
+    function test_open_and_close() public {
         IPool.ReserveData memory debtReserve = pool.getReserveData(DAI);
 
-        // Test long
-        console.log("--- Long ---");
+        // Test open
+        console.log("--- open ---");
         IVariableDebtToken debtToken =
             IVariableDebtToken(debtReserve.variableDebtTokenAddress);
         debtToken.approveDelegation(address(target), type(uint256).max);
@@ -49,8 +47,8 @@ contract LongTest is Test {
 
         bytes memory swapData = abi.encode(UNISWAP_V3_POOL_FEE_DAI_WETH);
 
-        uint256 collateralAmountOut = target.long(
-            Long.LongParams({
+        uint256 collateralAmountOut = target.open(
+            Long.OpenParams({
                 collateralToken: WETH,
                 collateralAmount: collateralAmount,
                 borrowToken: DAI,
