@@ -92,6 +92,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 - [App](https://app.aave.com/)
 - [Docs](https://aave.com/docs)
 - [GitHub aave-v3-core](https://github.com/aave/aave-v3-core)
+- [GitHub aave v3 error codes](https://github.com/aave/aave-v3-core/blob/master/contracts/protocol/libraries/helpers/Errors.sol)
 - [Aave V3 book](https://calnix.gitbook.io/aave-book)
 
 ##### Transactions
