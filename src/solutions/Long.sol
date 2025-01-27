@@ -2,11 +2,9 @@
 pragma solidity 0.8.28;
 
 import {IERC20} from "../interfaces/IERC20.sol";
-import {IPool} from "../interfaces/aave-v3/IPool.sol";
 import {Aave} from "../lib/Aave.sol";
 import {Swap} from "../lib/Swap.sol";
 import {Math} from "../lib/Math.sol";
-import {POOL} from "../Constants.sol";
 
 contract Long is Aave, Swap {
     struct OpenParams {
