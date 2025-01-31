@@ -36,7 +36,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - repay
     - withdraw
 - Core concepts
-  - [ ] APY and APR
+  - [ ] [APY and APR](./notes/apr-apy.png)
   - [ ] Market forces
   - [ ] Utilization rate
   - [ ] Interest rate model - graph
