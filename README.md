@@ -37,8 +37,8 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - withdraw
 - Core concepts
   - [ ] [APY and APR](./notes/apr-apy.png)
-  - [ ] Market forces
-  - [ ] Utilization rate
+  - [ ] [Market forces](./notes/market-forces.png)
+  - [ ] [Utilization rate](./notes/utilization-rate.png)
   - [ ] Interest rate model - graph
   - [ ] Reserve
   - [ ] Atoken and debt token
