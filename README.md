@@ -40,14 +40,15 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] [Market forces](./notes/market-forces.png)
   - [ ] [Utilization rate](./notes/utilization-rate.png)
   - [ ] Interest rate model - graph
-  - [ ] Reserve
+  - [ ] Reserve (move to supply section?)
   - [ ] Atoken and debt token
     - rebase token
     - 1:1
-  - [ ] Liquidity index -> animation?
+  - [ ] Liquidity and borrow index -> animation?
 - Contract architecture
   - Contract architecture
     - Flow (cache -> update state -> validation -> update interest -> execute -> check state)
+    - Oracle
   - Supply
     - [ ] Execution flow
     - [ ] linear interest
@@ -62,6 +63,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] liquidation threshold
     - [ ] asset price limit (liquidation price)
     - [ ] health factor
+    - [ ] TODO: Emode here?
     - [ ] debt delegation
     - [x] Exercise
   - Repay
@@ -92,6 +94,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 - [App](https://app.aave.com/)
 - [Docs](https://aave.com/docs)
 - [GitHub aave-v3-core](https://github.com/aave/aave-v3-core)
+- [GitHub aave-v3-origin](https://github.com/aave-dao/aave-v3-origin)
 - [GitHub aave v3 error codes](https://github.com/aave/aave-v3-core/blob/master/contracts/protocol/libraries/helpers/Errors.sol)
 - [Aave V3 book](https://calnix.gitbook.io/aave-book)
 
