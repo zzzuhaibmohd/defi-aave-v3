@@ -39,9 +39,9 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] [APY and APR](./notes/apr-apy.png)
   - [ ] [Market forces](./notes/market-forces.png)
   - [ ] [Utilization rate](./notes/utilization-rate.png)
-  - [ ] Interest rate model - graph
+  - [ ] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
   - [ ] Reserve (move to supply section?)
-  - [ ] Atoken and debt token
+  - [ ] AToken and debt token
     - rebase token
     - 1:1
   - [ ] Liquidity and borrow index -> animation?
