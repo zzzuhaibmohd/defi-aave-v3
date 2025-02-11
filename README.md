@@ -41,7 +41,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] [Utilization rate](./notes/utilization-rate.png)
   - [ ] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
   - [ ] Reserve (move to supply section?)
-  - [ ] AToken and debt token
+  - [ ] AToken and debt token (UI)
     - rebase token
     - 1:1
   - [ ] Liquidity and borrow index -> animation?
@@ -93,10 +93,10 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 
 - [App](https://app.aave.com/)
 - [Docs](https://aave.com/docs)
-- [GitHub aave-v3-core](https://github.com/aave/aave-v3-core)
 - [GitHub aave-v3-origin](https://github.com/aave-dao/aave-v3-origin)
 - [GitHub aave v3 error codes](https://github.com/aave/aave-v3-core/blob/master/contracts/protocol/libraries/helpers/Errors.sol)
 - [Aave V3 book](https://calnix.gitbook.io/aave-book)
+- [Pool - proxy](https://etherscan.io/address/0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)
 
 ##### Transactions
 
