@@ -46,9 +46,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - 1:1
   - [ ] Liquidity and borrow index -> animation?
 - Contract architecture
-  - Contract architecture
-    - Flow (cache -> update state -> validation -> update interest -> execute -> check state)
-    - Oracle
+  - [Contract architecture](./notes/arc.png)
   - Supply
     - [ ] Execution flow
     - [ ] linear interest
@@ -64,7 +62,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] asset price limit (liquidation price)
     - [ ] health factor
     - [ ] TODO: Emode here?
-    - [ ] debt delegation
+    - [ ] credit delegation
     - [x] Exercise
   - Repay
     - [ ] Execution flow
