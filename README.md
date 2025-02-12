@@ -17,6 +17,10 @@ FORK_URL=...
 forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 ```
 
+- Setup
+
+  - How to solve exercises (show demo of tenderly)
+
 - Intro
   - [ ] UI
     - use case
