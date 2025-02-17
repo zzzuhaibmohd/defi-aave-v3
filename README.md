@@ -67,7 +67,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] ltv
     - [ ] liquidation threshold
     - [ ] health factor
-    - [ ] asset price limit (liquidation price)
+    - [ ] liquidation penalty
     - [ ] TODO: Emode here?
     - [ ] credit delegation
     - [x] Exercise
