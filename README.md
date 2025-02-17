@@ -61,10 +61,13 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] compound interest
       - why supply -> linear and borrow -> compound -> protocol safety
     - [ ] reserve factor
+      - protocol fee rate
+      - risky asset -> high reserve factor
+      - low risk asset -> low reserve factor
     - [ ] ltv
     - [ ] liquidation threshold
-    - [ ] asset price limit (liquidation price)
     - [ ] health factor
+    - [ ] asset price limit (liquidation price)
     - [ ] TODO: Emode here?
     - [ ] credit delegation
     - [x] Exercise
