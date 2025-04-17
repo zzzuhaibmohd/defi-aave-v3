@@ -1,4 +1,4 @@
-# DeFi Aave V3
+# DeFi Aave V3 (3.3)
 
 ### TODO
 
@@ -19,6 +19,8 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 
 - Setup
 
+  - aave v3.3
+  - Tenderly
   - How to solve exercises (show demo of tenderly)
 
 - Intro
@@ -49,15 +51,20 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - rebase token
     - 1:1
   - [ ] Liquidity and borrow index -> animation?
+    - scaled balance
+  - [ ] Liquidity and borrow indexes code
+    - [ ] Why linear and compound interest?
+      - risk compensation -> strong incentive for borrowers to repay
+      - protocol revenue -> interest rate spread (graph)
 - Contract architecture
   - [Contract architecture](./notes/arc.png)
   - Supply
-    - [ ] Execution flow
+    - [ ] Execution flow (tenderly)
     - [ ] linear interest
     - [ ] on behalf of
     - [x] Exercise
   - Borrow
-    - [ ] Execution flow
+    - [ ] Execution flow (tenderly)
     - [ ] compound interest
       - why supply -> linear and borrow -> compound -> protocol safety
     - [ ] reserve factor
@@ -67,19 +74,20 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] ltv
     - [ ] liquidation threshold
     - [ ] health factor
+    - [ ] close factor
     - [ ] liquidation penalty
     - [ ] TODO: Emode here?
     - [ ] credit delegation
     - [x] Exercise
   - Repay
-    - [ ] Execution flow
+    - [ ] Execution flow (tenderly)
     - [x] Exercise
   - Withdraw
-    - [ ] Execution flow
+    - [ ] Execution flow (tenderly)
     - [ ] Conditions for withdraw (health factor)
     - [ ] Exercise
   - Liquidation
-    - [ ] Execution flow
+    - [ ] Execution flow (tenderly)?
     - penalty
     - close factor
     - bonus
@@ -99,11 +107,14 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 - [App](https://app.aave.com/)
 - [Docs](https://aave.com/docs)
 - [GitHub aave-v3-origin](https://github.com/aave-dao/aave-v3-origin)
+- [GitHub aave-v3-origin 3.3](https://github.com/aave-dao/aave-v3-origin/tree/v3.3.0)
 - [GitHub aave v3 error codes](https://github.com/aave/aave-v3-core/blob/master/contracts/protocol/libraries/helpers/Errors.sol)
 - [Aave V3 book](https://calnix.gitbook.io/aave-book)
 - [Pool - proxy](https://etherscan.io/address/0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)
 
 ##### Transactions
+
+TODO: send new transactions?
 
 - [Supply rETH tx](https://etherscan.io/tx/0xc1120138b3aa3dc6a49ef7e84ecd17530c273e2442f83e47025d819d9a700743)
 - [Supply ETH tx](https://etherscan.io/tx/0x21de14e5c58b9431a70b780893d01f0b82f07a0495d851d97fc0e85c64887610)
