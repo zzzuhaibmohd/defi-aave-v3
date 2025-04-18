@@ -76,8 +76,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] ltv
     - [ ] liquidation threshold
     - [ ] health factor
-    - [ ] close factor
-    - [ ] liquidation penalty
+      - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
     - [ ] TODO: Emode here?
     - [ ] credit delegation
     - [x] Exercise
@@ -90,9 +89,14 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] Exercise
   - Liquidation
     - [ ] Execution flow (tenderly)?
-    - penalty
-    - close factor
-    - bonus
+    - [ ] [Close factor](./notes/close-factor.png)
+      - [Code](./notes/liquidation.md)
+    - [ ] [Math](./notes/liquidation.png)
+      - condition
+      - amount of collateral to liquidate
+      - bonus
+      - protocol fee
+    - [ ] [Code](./notes/liquidation.md)
     - [x] Exercise
   - Flash loan simple
     - [ ] Execution flow
