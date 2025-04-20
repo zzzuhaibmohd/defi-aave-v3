@@ -47,7 +47,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] [Utilization rate](./notes/utilization-rate.png)
   - [ ] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
     - [`DefaultReserveInterestRateStrategyV2.calculateInterestRates`](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/misc/DefaultReserveInterestRateStrategyV2.sol#L125-L177)
-  - [ ] Reserve (move to supply section?)
+  - [ ] Reserve (TODO: move to supply section?)
   - [ ] AToken and debt token (UI)
     - rebase token
     - 1:1
@@ -100,7 +100,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] [Code](./notes/liquidation.md)
     - [x] Exercise
   - Flash loan simple
-    - [ ] Execution flow
+    - [ ] [Execution flow](./notes/flash-loan.md)
     - [ ] Exercise
 - Leverage and short
   - [ ] Leverage
