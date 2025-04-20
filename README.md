@@ -91,6 +91,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] Execution flow (tenderly)?
     - [ ] [Close factor](./notes/close-factor.png)
       - [Code](./notes/liquidation.md)
+      - `MIN_LEFTOVER_BASE`
     - [ ] [Math](./notes/liquidation.png)
       - condition
       - amount of collateral to liquidate
