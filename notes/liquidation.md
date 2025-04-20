@@ -52,6 +52,8 @@ protocol fee = bonus collateral * protocol fee percentage
 
 ### Dust prevention
 
+[MIN_LEFTOVER_BASE](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/LiquidationLogic.sol#L320-L344)
+
 ```
 // to prevent accumulation of dust on the protocol, it is enforced that you either
 // 1. liquidate all debt
