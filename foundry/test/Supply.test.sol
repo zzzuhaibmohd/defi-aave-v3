@@ -5,10 +5,7 @@ import {Test} from "forge-std/Test.sol";
 import {IERC20} from "@src/interfaces/IERC20.sol";
 import {POOL, WETH} from "@src/Constants.sol";
 import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
-// TODO: exercises path
-import {Supply} from "@src/solutions/Supply.sol";
-
-// forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
+import {Supply} from "@exercises/Supply.sol";
 
 contract SupplyTest is Test {
     IERC20 private constant weth = IERC20(WETH);

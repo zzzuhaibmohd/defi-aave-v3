@@ -5,10 +5,7 @@ import {Test, console} from "forge-std/Test.sol";
 import {IERC20} from "@src/interfaces/IERC20.sol";
 import {POOL, WETH, DAI} from "@src/Constants.sol";
 import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
-// TODO: exercises path
-import {Flash} from "@src/solutions/Flash.sol";
-
-// forge test --fork-url $FORK_URL --match-path test/Flash.test.sol -vvv
+import {Flash} from "@exercises/Flash.sol";
 
 contract FlashTest is Test {
     IERC20 private constant dai = IERC20(DAI);

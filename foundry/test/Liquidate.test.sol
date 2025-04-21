@@ -6,8 +6,7 @@ import {IERC20} from "@src/interfaces/IERC20.sol";
 import {POOL, ORACLE, WETH, DAI} from "@src/Constants.sol";
 import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
 import {IAaveOracle} from "@src/interfaces/aave-v3/IAaveOracle.sol";
-// TODO: exercises path
-import {Liquidate} from "@src/solutions/Liquidate.sol";
+import {Liquidate} from "@exercises/Liquidate.sol";
 
 // forge test --fork-url $FORK_URL --match-path test/Liquidate.test.sol -vvv
 

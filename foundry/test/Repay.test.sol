@@ -6,10 +6,7 @@ import {IERC20} from "@src/interfaces/IERC20.sol";
 import {POOL, ORACLE, WETH, DAI} from "@src/Constants.sol";
 import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
 import {IAaveOracle} from "@src/interfaces/aave-v3/IAaveOracle.sol";
-// TODO: exercises path
-import {Repay} from "@src/solutions/Repay.sol";
-
-// forge test --fork-url $FORK_URL --match-path test/Repay.test.sol -vvv
+import {Repay} from "@exercises/Repay.sol";
 
 contract RepayTest is Test {
     IERC20 private constant weth = IERC20(WETH);

@@ -5,10 +5,7 @@ import {Test, console} from "forge-std/Test.sol";
 import {IERC20} from "@src/interfaces/IERC20.sol";
 import {POOL, WETH} from "@src/Constants.sol";
 import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
-// TODO: exercises path
-import {Withdraw} from "@src/solutions/Withdraw.sol";
-
-// forge test --fork-url $FORK_URL --match-path test/Withdraw.test.sol -vvv
+import {Withdraw} from "@exercises/Withdraw.sol";
 
 contract WithdrawTest is Test {
     IERC20 private constant weth = IERC20(WETH);

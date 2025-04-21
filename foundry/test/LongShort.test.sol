@@ -14,10 +14,7 @@ import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
 import {IVariableDebtToken} from
     "@src/interfaces/aave-v3/IVariableDebtToken.sol";
 import {IAaveOracle} from "@src/interfaces/aave-v3/IAaveOracle.sol";
-// TODO: exercises path
-import {LongShort} from "@src/solutions/LongShort.sol";
-
-// forge test --fork-url $FORK_URL --match-path test/LongShort.test.sol -vvv
+import {LongShort} from "@exercises/LongShort.sol";
 
 contract LongShortTest is Test {
     IERC20 private constant weth = IERC20(WETH);
