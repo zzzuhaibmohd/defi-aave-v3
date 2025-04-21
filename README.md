@@ -63,12 +63,15 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - Supply
     - [ ] Execution flow (tenderly)
     - [ ] linear interest
+      - `MathUtils.calculateLinearInterest`
     - [ ] on behalf of
     - [x] Exercise
   - Borrow
     - [ ] Execution flow (tenderly)
     - [ ] compound interest
       - why supply -> linear and borrow -> compound -> protocol safety
+      - python approximation?
+        - `MathUtils.calculateCompoundedInterest` (TODO: animation)
     - [ ] reserve factor
       - protocol fee rate
       - risky asset -> high reserve factor
