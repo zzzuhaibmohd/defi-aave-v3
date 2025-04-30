@@ -105,9 +105,9 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - Flash loan simple
     - [ ] [Execution flow](./notes/flash-loan.md)
     - [ ] Exercise
-- Leverage and short
-  - [ ] Leverage
-  - [ ] Short
+- Long leverage and short
+  - [ ] [Long leverage](./notes/long.png)
+  - [ ] [Short](./notes/short.png)
   - [ ] Exercises
 
 ### Resources
