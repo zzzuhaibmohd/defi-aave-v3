@@ -70,7 +70,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] Execution flow (tenderly)
     - [ ] compound interest
       - why supply -> linear and borrow -> compound -> protocol safety
-      - python approximation?
+      - TODO: [python approximation](./notes/binomial_expansion.ipynb)
         - `MathUtils.calculateCompoundedInterest` (TODO: animation?)
     - [ ] reserve factor
       - protocol fee rate
