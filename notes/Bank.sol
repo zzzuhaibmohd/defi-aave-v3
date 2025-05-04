@@ -27,7 +27,9 @@ contract Bank {
     // user => debt
     mapping(address => uint256) public debts;
 
+    // R(n-1)
     uint256 public cumulativeRates = 1e18;
+    // R(k-1)
     // user => cumulative rate when user borrowed
     mapping(address => uint256) public userCumulativeRates;
 
@@ -41,7 +43,9 @@ contract Bank {
     // user => debt
     mapping(address => uint256) public debts;
 
+    // R(n-1)
     uint256 public cumulativeRates = 1e18;
+    // R(k-1)
     // user => cumulative rate when user borrowed
     mapping(address => uint256) public userCumulativeRates;
 
