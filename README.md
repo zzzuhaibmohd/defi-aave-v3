@@ -55,7 +55,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] [Scaled balance](./notes/scaled-balance.png)
     - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L66-L120)
   - [ ] [Liquidity and borrow indexes code](./notes/liquidity-index.md)
-    - [ ] Why linear and compound interest?
+    - [ ] TODO:? Why linear and compound interest?
       - risk compensation -> strong incentive for borrowers to repay
       - protocol revenue -> interest rate spread (graph)
 - Contract architecture
@@ -78,7 +78,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - low risk asset -> low reserve factor
     - [ ] ltv
     - [ ] liquidation threshold
-    - [ ] health factor
+    - [ ] [health factor](./notes/health-factor.png)
       - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
     - [ ] TODO: Emode here?
     - [ ] credit delegation
