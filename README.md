@@ -27,20 +27,31 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] UI
     - use case
     - supply
-      - APY and APR
-      - interest rate model
+      - send tx
+        - health factor
+        - stats
+        - withdraw
+      - detail
+        - reserve size
+        - available liquidity
         - utilization rate
-      - isolated mode
-        - Isolated assets have limited borrowing power and other assets cannot be used as collateral.
+        - APY and APR
+        - collateral
+          - max ltv
+          - liquidation threshold and penalty
+        - interest rate model
+          - utilization rate
+          - borrow interest
+      - isolation mode
     - borrow
-      - ltv
       - health factor
-      - liquidation penalty, bonus, close factor
-      - e-mode
-        - E-Mode increases your LTV for a selected category of assets.
-    - net apy
-    - repay
-    - withdraw
+      - risk details
+      - details
+        - reserve factor
+        - e-mode
+          - E-Mode increases your LTV for a selected category of assets.
+          - enable emode
+      - repay
 - Core concepts
   - [x] [APY and APR](./notes/apr-apy.png)
   - [x] [Market forces](./notes/market-forces.png)
