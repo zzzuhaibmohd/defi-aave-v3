@@ -102,7 +102,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - Withdraw
     - [ ] Execution flow (tenderly)
     - [ ] Conditions for withdraw (health factor)
-    - [ ] Exercise
+    - [x] Exercise
   - Liquidation
     - [ ] Execution flow (tenderly)?
     - [ ] [Close factor](./notes/close-factor.png)
