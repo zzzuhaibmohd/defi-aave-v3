@@ -47,12 +47,12 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [x] [Utilization rate](./notes/utilization-rate.png)
   - [x] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
     - [`DefaultReserveInterestRateStrategyV2.calculateInterestRates`](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/misc/DefaultReserveInterestRateStrategyV2.sol#L125-L177)
-  - [ ] [Reserve](./notes/reserve.md)
+  - [x] [Reserve](./notes/reserve.md)
   - [ ] AToken and debt token (UI)
     - rebase token
     - 1:1
   - [ ] Liquidity and borrow index -> animation?
-  - [ ] [Scaled balance](./notes/scaled-balance.png)
+  - [x] [Scaled balance](./notes/scaled-balance.png)
     - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L66-L120)
   - [ ] [Liquidity and borrow indexes code](./notes/liquidity-index.md)
     - [ ] TODO:? Why linear and compound interest?
