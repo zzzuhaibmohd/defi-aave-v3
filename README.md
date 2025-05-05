@@ -135,16 +135,17 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 
 ##### Transactions
 
-TODO: send new transactions?
-
 - [Supply rETH tx](https://etherscan.io/tx/0xc1120138b3aa3dc6a49ef7e84ecd17530c273e2442f83e47025d819d9a700743)
 - [Supply ETH tx](https://etherscan.io/tx/0x21de14e5c58b9431a70b780893d01f0b82f07a0495d851d97fc0e85c64887610)
 - [Borrow DAI tx](https://etherscan.io/tx/0x5e4deab9462bec720f883522d306ec306959cb3ae1ec2eaf0d55477eed01b5a4)
 - [Repay DAI tx](https://etherscan.io/tx/0x1145e9815060164ef9234bdbc6d88db97ac5dda7b1e30732dc981145604e0373)
 - [Withdraw rETH](https://etherscan.io/tx/0x7442ab56bfe90a189516f44846b93d25aa0dde3bbfba935429ac561ab34bc575)
 - [Withdraw ETH](https://etherscan.io/tx/0x748e56cfaa10b6d629bd06badfdf83b337956e640523bbb1805901e11915c517)
-
-- [Borrow ETH - waiting for liquidation](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
+- [Supply DAI](https://etherscan.io/tx/0x48237c5e7aaae5d35f36c1d8b66abf4cc5fc8d335dfa395f89b3b1627a2540c8)
+- [Withdraw DAI](https://etherscan.io/tx/0x4e263e358db180ec478d61542a1126a47bba6d6fc0d5bb2b7b8cf83a8bdb11d3)
+- [Borrow DAI](https://etherscan.io/tx/0x5e4deab9462bec720f883522d306ec306959cb3ae1ec2eaf0d55477eed01b5a4)
+- [Repay DAI](https://etherscan.io/tx/0x1145e9815060164ef9234bdbc6d88db97ac5dda7b1e30732dc981145604e0373)
+- [Borrow ETH](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
 
 ##### Misc
 
