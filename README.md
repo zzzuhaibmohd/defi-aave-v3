@@ -51,15 +51,15 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [ ] AToken and debt token (UI)
     - rebase token
     - 1:1
-  - [ ] Liquidity and borrow index -> animation?
+  - [ ] Liquidity and borrow index animation
   - [x] [Scaled balance](./notes/scaled-balance.png)
     - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L66-L120)
-  - [ ] [Liquidity and borrow indexes code](./notes/liquidity-index.md)
+  - [x] [Liquidity and borrow indexes code](./notes/liquidity-index.md)
     - [ ] TODO:? Why linear and compound interest?
       - risk compensation -> strong incentive for borrowers to repay
       - protocol revenue -> interest rate spread (graph)
 - Contract architecture
-  - [Contract architecture](./notes/arc.png)
+  - [x] [Contract architecture](./notes/arc.png)
   - Supply
     - [ ] Execution flow (tenderly)
     - [ ] linear interest
