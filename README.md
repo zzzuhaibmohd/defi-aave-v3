@@ -59,7 +59,9 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [x] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
     - [`DefaultReserveInterestRateStrategyV2.calculateInterestRates`](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/misc/DefaultReserveInterestRateStrategyV2.sol#L125-L177)
   - [x] [Reserve](./notes/reserve.md)
-  - [ ] AToken and debt token (UI)
+  - [ ] AToken and debt token (etherscan)
+    - [Supply DAI](https://etherscan.io/tx/0x48237c5e7aaae5d35f36c1d8b66abf4cc5fc8d335dfa395f89b3b1627a2540c8)
+    - [Borrow ETH](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
     - rebase token
     - 1:1
   - [ ] Liquidity and borrow index animation
