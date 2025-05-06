@@ -25,7 +25,6 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 
 - Intro
   - [ ] UI
-    - use case
     - supply
       - send tx
         - health factor
@@ -75,33 +74,29 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
   - [x] [Contract architecture](./notes/arc.png)
   - Supply
     - [ ] Execution flow (tenderly)
+      - on behalf of
     - [ ] linear interest
       - `MathUtils.calculateLinearInterest`
-    - [ ] on behalf of
     - [x] Exercise
   - Borrow
     - [ ] Execution flow (tenderly)
+      - credit delegation
     - [ ] compound interest
-      - why supply -> linear and borrow -> compound -> protocol safety
+      - Why supply is linear and borrow is compound?
       - TODO: [python approximation](./notes/binomial_expansion.ipynb)
         - `MathUtils.calculateCompoundedInterest` (TODO: animation?)
-    - [ ] reserve factor
-      - protocol fee rate
-      - risky asset -> high reserve factor
-      - low risk asset -> low reserve factor
-    - [ ] ltv
-    - [ ] liquidation threshold
+    - Reserve factor (UI)
+    - [ ] [LTV](./notes/ltv.png)
     - [ ] [health factor](./notes/health-factor.png)
+      - liquidation threshold
       - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
-    - [ ] TODO: Emode here?
-    - [ ] credit delegation
     - [x] Exercise
   - Repay
     - [ ] Execution flow (tenderly)
     - [x] Exercise
   - Withdraw
     - [ ] Execution flow (tenderly)
-    - [ ] Conditions for withdraw (health factor)
+      - Conditions for withdraw (health factor)
     - [x] Exercise
   - Liquidation
     - [ ] Execution flow (tenderly)?
