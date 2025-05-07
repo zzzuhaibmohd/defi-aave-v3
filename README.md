@@ -86,7 +86,6 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] [LTV](./notes/ltv.png)
     - [ ] [Liquidation threshold](./notes/liquidation-threshold.png)
     - [ ] [Health factor](./notes/health-factor.png)
-      - liquidation threshold
       - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
     - [x] Exercise
   - Repay
