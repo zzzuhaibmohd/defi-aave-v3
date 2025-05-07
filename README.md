@@ -41,7 +41,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
         - interest rate model
           - utilization rate
           - borrow interest
-      - isolation mode
+      - isolation mode (fix restriction on collateral explanation)
     - borrow
       - health factor
       - risk details
@@ -51,18 +51,15 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
           - E-Mode increases your LTV for a selected category of assets.
           - enable emode
       - repay
-- Core concepts
-  - [x] [APY and APR](./notes/apr-apy.png)
+- Core concepts - [x] [APY and APR](./notes/apr-apy.png)
   - [x] [Market forces](./notes/market-forces.png)
   - [x] [Utilization rate](./notes/utilization-rate.png)
   - [x] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
     - [`DefaultReserveInterestRateStrategyV2.calculateInterestRates`](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/misc/DefaultReserveInterestRateStrategyV2.sol#L125-L177)
   - [x] [Reserve](./notes/reserve.md)
-  - [ ] AToken and debt token (etherscan)
+  - [x] AToken and debt token
     - [Supply DAI](https://etherscan.io/tx/0x48237c5e7aaae5d35f36c1d8b66abf4cc5fc8d335dfa395f89b3b1627a2540c8)
     - [Borrow ETH](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
-    - rebase token
-    - 1:1
   - [ ] Liquidity and borrow index animation
   - [x] [Scaled balance](./notes/scaled-balance.png)
     - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L66-L120)
@@ -85,9 +82,10 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - Why supply is linear and borrow is compound?
       - TODO: [python approximation](./notes/binomial_expansion.ipynb)
         - `MathUtils.calculateCompoundedInterest` (TODO: animation?)
-    - Reserve factor (UI)
+    - [ ] Reserve factor (UI)
     - [ ] [LTV](./notes/ltv.png)
-    - [ ] [health factor](./notes/health-factor.png)
+    - [ ] [Liquidation threshold](./notes/liquidation-threshold.png)
+    - [ ] [Health factor](./notes/health-factor.png)
       - liquidation threshold
       - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
     - [x] Exercise
@@ -116,6 +114,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 - Long leverage and short
   - [ ] [Long leverage](./notes/long.png)
   - [ ] [Short](./notes/short.png)
+  - [ ] Flash leverage
   - [ ] Exercises
 
 ### Resources
