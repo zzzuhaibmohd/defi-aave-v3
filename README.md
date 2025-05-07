@@ -82,7 +82,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - Why supply is linear and borrow is compound?
       - TODO: [python approximation](./notes/binomial_expansion.ipynb)
         - `MathUtils.calculateCompoundedInterest` (TODO: animation?)
-    - [ ] Reserve factor (UI)
+    - [ ] [Reserve factor](./notes/reserve-factor.md)
     - [ ] [LTV](./notes/ltv.png)
     - [ ] [Liquidation threshold](./notes/liquidation-threshold.png)
     - [ ] [Health factor](./notes/health-factor.png)
