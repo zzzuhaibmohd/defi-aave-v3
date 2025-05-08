@@ -41,7 +41,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
         - interest rate model
           - utilization rate
           - borrow interest
-      - isolation mode (fix restriction on collateral explanation)
+      - isolation mode (TODO: fix restriction on collateral explanation)
     - borrow
       - health factor
       - risk details
@@ -105,7 +105,8 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - amount of collateral to liquidate
       - bonus
       - protocol fee
-    - [ ] [Code](./notes/liquidation.md)
+      - [ ] [Code](./notes/liquidation.md)
+    - [ ] TODO: dust?
     - [x] Exercise
   - Flash loan simple
     - [ ] [Execution flow](./notes/flash-loan.md)
