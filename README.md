@@ -70,29 +70,29 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 - Contract architecture
   - [x] [Contract architecture](./notes/arc.png)
   - Supply
-    - [ ] Execution flow (tenderly)
+    - [x] Execution flow (tenderly)
       - on behalf of
     - [ ] linear interest
       - `MathUtils.calculateLinearInterest`
     - [x] Exercise
   - Borrow
-    - [ ] Execution flow (tenderly)
+    - [x] Execution flow (tenderly)
       - credit delegation
     - [ ] compound interest
       - Why supply is linear and borrow is compound?
       - TODO: [python approximation](./notes/binomial_expansion.ipynb)
         - `MathUtils.calculateCompoundedInterest` (TODO: animation?)
-    - [ ] [Reserve factor](./notes/reserve-factor.md)
-    - [ ] [LTV](./notes/ltv.png)
-    - [ ] [Liquidation threshold](./notes/liquidation-threshold.png)
-    - [ ] [Health factor](./notes/health-factor.png)
+    - [x] [Reserve factor](./notes/reserve-factor.md)
+    - [x] [LTV](./notes/ltv.png)
+    - [x] [Liquidation threshold](./notes/liquidation-threshold.png)
+    - [x] [Health factor](./notes/health-factor.png)
       - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
     - [x] Exercise
   - Repay
-    - [ ] Execution flow (tenderly)
+    - [x] Execution flow (tenderly)
     - [x] Exercise
   - Withdraw
-    - [ ] Execution flow (tenderly)
+    - [x] Execution flow (tenderly)
       - Conditions for withdraw (health factor)
     - [x] Exercise
   - Liquidation
