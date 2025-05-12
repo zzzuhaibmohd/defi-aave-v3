@@ -17,10 +17,12 @@ FORK_URL=...
 forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 ```
 
-- Setup
+- TODO: [Course intro](./notes/course-intro.md)
+- Setup (TODO)
 
   - aave v3.3
   - Tenderly + transaction links
+  - Python demo on [jupyter](https://jupyter.org/install)
   - How to solve exercises (show demo of tenderly)
 
 - Intro
@@ -82,7 +84,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] compound interest
       - Why supply is linear and borrow is compound?
       - TODO: [python approximation](./notes/binomial_expansion.ipynb)
-        - `MathUtils.calculateCompoundedInterest` (TODO: animation?)
+        - `MathUtils.calculateCompoundedInterest`
     - [x] [Reserve factor](./notes/reserve-factor.md)
     - [x] [LTV](./notes/ltv.png)
     - [x] [Liquidation threshold](./notes/liquidation-threshold.png)
