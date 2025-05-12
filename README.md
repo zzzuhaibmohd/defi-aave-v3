@@ -78,7 +78,9 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - on behalf of
     - [ ] linear interest
       - `MathUtils.calculateLinearInterest`
-    - [x] Exercise
+    - [Exercises](./foundry/exercises/supply.md)
+      - [Starter code](./foundry/src/exercises/Supply.sol)
+      - [Solution](./foundry/src/solutions/Supply.sol)
   - Borrow
     - [x] Execution flow (tenderly)
       - credit delegation
@@ -91,14 +93,20 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [x] [Liquidation threshold](./notes/liquidation-threshold.png)
     - [x] [Health factor](./notes/health-factor.png)
       - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
-    - [x] Exercise
+    - [Exercises](./foundry/exercises/borrow.md)
+      - [Starter code](./foundry/src/exercises/Borrw.sol)
+      - [Solution](./foundry/src/solutions/Borrow.sol)
   - Repay
     - [x] Execution flow (tenderly)
-    - [x] Exercise
+    - [Exercises](./foundry/exercises/repay.md)
+      - [Starter code](./foundry/src/exercises/Repay.sol)
+      - [Solution](./foundry/src/solutions/Repay.sol)
   - Withdraw
     - [x] Execution flow (tenderly)
       - Conditions for withdraw (health factor)
-    - [x] Exercise
+    - [Exercises](./foundry/exercises/withdraw.md)
+      - [Starter code](./foundry/src/exercises/Withdraw.sol)
+      - [Solution](./foundry/src/solutions/Withdraw.sol)
   - Liquidation
     - [ ] Execution flow (tenderly)?
     - [x] [Close factor](./notes/close-factor.png)
@@ -111,15 +119,21 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - protocol fee
       - [ ] [Code](./notes/liquidation.md)
     - [ ] TODO: dust
-    - [x] Exercise
+    - [Exercises](./foundry/exercises/liquidation.md)
+      - [Starter code](./foundry/src/exercises/Liquidation.sol)
+      - [Solution](./foundry/src/solutions/Liquidation.sol)
   - Flash loan simple
     - [x] [Execution flow](./notes/flash-loan.md)
-    - [ ] Exercise
+    - [Exercises](./foundry/exercises/flash.md)
+      - [Starter code](./foundry/src/exercises/Flash.sol)
+      - [Solution](./foundry/src/solutions/Flash.sol)
 - Long leverage and short
   - [x] [Long leverage](./notes/long.png)
   - [x] [Short](./notes/short.png)
   - [x] Flash leverage
-  - [ ] Exercises
+  - [Exercises](./foundry/exercises/long-short.md)
+    - [Starter code](./foundry/src/exercises/LongShort.sol)
+    - [Solution](./foundry/src/solutions/LongShort.sol)
 
 ### Resources
 
