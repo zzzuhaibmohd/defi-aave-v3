@@ -37,11 +37,6 @@ contract Borrow {
         return healthFactor;
     }
 
-    function getVariableDebt(address token) public view returns (uint256) {
-        IPool.ReserveData memory reserve = pool.getReserveData(token);
-        return IERC20(reserve.variableDebtTokenAddress).balanceOf(address(this));
-    }
-
     function borrow(address token, uint256 amount) public {
         pool.borrow({
             asset: token,
@@ -52,5 +47,10 @@ contract Borrow {
             referralCode: 0,
             onBehalfOf: address(this)
         });
+    }
+
+    function getVariableDebt(address token) public view returns (uint256) {
+        IPool.ReserveData memory reserve = pool.getReserveData(token);
+        return IERC20(reserve.variableDebtTokenAddress).balanceOf(address(this));
     }
 }
