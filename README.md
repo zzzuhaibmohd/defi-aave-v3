@@ -42,6 +42,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
           - utilization rate
           - borrow interest
       - isolation mode (TODO: fix restriction on collateral explanation)
+        - Borrowers supplying an isolated asset as collateral cannot supply other assets as collateral (though they can still supply to capture yield
     - borrow
       - health factor
       - risk details
@@ -106,7 +107,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - bonus
       - protocol fee
       - [ ] [Code](./notes/liquidation.md)
-    - [ ] TODO: dust?
+    - [ ] TODO: dust
     - [x] Exercise
   - Flash loan simple
     - [x] [Execution flow](./notes/flash-loan.md)
