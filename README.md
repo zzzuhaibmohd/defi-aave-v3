@@ -97,10 +97,10 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [x] Exercise
   - Liquidation
     - [ ] Execution flow (tenderly)?
-    - [ ] [Close factor](./notes/close-factor.png)
+    - [x] [Close factor](./notes/close-factor.png)
       - [Code](./notes/liquidation.md)
       - `MIN_LEFTOVER_BASE`
-    - [ ] [Math](./notes/liquidation.png)
+    - [x] [Math](./notes/liquidation.png)
       - condition
       - amount of collateral to liquidate
       - bonus
@@ -109,7 +109,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
     - [ ] TODO: dust?
     - [x] Exercise
   - Flash loan simple
-    - [ ] [Execution flow](./notes/flash-loan.md)
+    - [x] [Execution flow](./notes/flash-loan.md)
     - [ ] Exercise
 - Long leverage and short
   - [ ] [Long leverage](./notes/long.png)
