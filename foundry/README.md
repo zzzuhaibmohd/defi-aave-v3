@@ -12,8 +12,11 @@ FOUNDRY_PROFILE=solution forge build
 FORK_BLOCK_NUM=$(cast block-number --rpc-url $FORK_URL)
 
 # Test exercise
-forge clean && forge test --fork-url $FORK_URL --fork-block-number $FORK_BLOCK_NUM --match-path test/Supply.test.sol -vvv
+forge test --fork-url $FORK_URL --fork-block-number $FORK_BLOCK_NUM --match-path test/Supply.test.sol -vvv
 
 # Test solution
-FOUNDRY_PROFILE=solution forge clean && forge test --fork-url $FORK_URL --fork-block-number $FORK_BLOCK_NUM --match-path test/Supply.test.sol -vvv
+FOUNDRY_PROFILE=solution forge test --fork-url $FORK_URL --fork-block-number $FORK_BLOCK_NUM --match-path test/Supply.test.sol -vvv
+
+# Try building from scratch if you're having trouble
+forge clean
 ```
