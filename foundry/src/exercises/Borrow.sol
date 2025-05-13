@@ -42,10 +42,9 @@ contract Borrow {
     // Task 4 - Get variable debt balance of this contract
     function getVariableDebt(address token) public view returns (uint256) {
         // Task 4.1 - Get the variable debt token address from the pool contract
+
         // Task 4.2 - Get the balance of the variable debt token for this contract.
         // Balance of the variable debt token is the amount of token that this
         // contract must repay to Aave V3.
-        IPool.ReserveData memory reserve = pool.getReserveData(token);
-        return IERC20(reserve.variableDebtTokenAddress).balanceOf(address(this));
     }
 }

@@ -19,14 +19,17 @@ contract Withdraw {
         });
     }
 
+    // Task 1 - Get aToken balance of this contract
+    // The aToken balance is the amount of underlying token that this contract
+    // can withdraw
     function getSupplyBalance(address token) public view returns (uint256) {
-        IPool.ReserveData memory reserve = pool.getReserveData(token);
-        return IERC20(reserve.aTokenAddress).balanceOf(address(this));
+        // Task 1.1 - Get the aToken address from the pool contract
+        // Task 1.2 - Get the balance of aToken that this contract has
     }
 
+    // Task 2 - Withdraw all of underlying token from Aave V3
     function withdraw(address token, uint256 amount) public returns (uint256) {
-        uint256 withdrawn =
-            pool.withdraw({asset: token, amount: amount, to: address(this)});
-        return withdrawn;
+        // Task 2.1 - Withdraw all of underlying token from Aave V3
+        // Task 2.2 - Return the amount that was withdrawn
     }
 }
