@@ -1,121 +1,83 @@
 # DeFi Aave V3 (3.3)
 
+## Introduction
+
 - [Course intro](./notes/course-intro.md)
 - [Setup](./notes/course-setup.md)
-- Intro
-  - [ ] UI
-    - supply
-      - send tx
-        - health factor
-        - stats
-        - withdraw
-      - detail
-        - reserve size
-        - available liquidity
-        - utilization rate
-        - APY and APR
-        - collateral
-          - max ltv
-          - liquidation threshold and penalty
-        - interest rate model
-          - utilization rate
-          - borrow interest
-      - isolation mode (TODO: fix restriction on collateral explanation)
-        - Borrowers supplying an isolated asset as collateral cannot supply other assets as collateral (though they can still supply to capture yield
-    - borrow
-      - health factor
-      - risk details
-      - details
-        - reserve factor
-        - e-mode
-          - E-Mode increases your LTV for a selected category of assets.
-          - enable emode
-      - repay
-- Core concepts
-  - [x] [APY and APR](./notes/apr-apy.png)
-  - [x] [Market forces](./notes/market-forces.png)
-  - [x] [Utilization rate](./notes/utilization-rate.png)
-  - [x] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
-    - [`DefaultReserveInterestRateStrategyV2.calculateInterestRates`](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/misc/DefaultReserveInterestRateStrategyV2.sol#L125-L177)
-  - [x] [Reserve](./notes/reserve.md)
-  - [x] AToken and debt token
+
+## Foundation
+
+- [UI demo](https://app.aave.com/)
+- [APY and APR](./notes/apr-apy.png)
+- [Market forces](./notes/market-forces.png)
+- [Utilization rate](./notes/utilization-rate.png)
+- [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
+- [Reserve](./notes/reserve.md)
+- AToken and debt token
+  - [Supply DAI](https://etherscan.io/tx/0x48237c5e7aaae5d35f36c1d8b66abf4cc5fc8d335dfa395f89b3b1627a2540c8)
+  - [Borrow ETH](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
+- Liquidity and borrow index
+- [Scaled balance](./notes/scaled-balance.png)
+- [Liquidity and borrow indexes code](./notes/liquidity-index.md)
+
+## Contract Architecture
+
+- [Contract architecture](./notes/arc.png)
+- Supply
+  - Execution flow
     - [Supply DAI](https://etherscan.io/tx/0x48237c5e7aaae5d35f36c1d8b66abf4cc5fc8d335dfa395f89b3b1627a2540c8)
-    - [Borrow ETH](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
-  - [x] Liquidity and borrow index animation
-  - [x] [Scaled balance](./notes/scaled-balance.png)
-    - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L66-L120)
-  - [x] [Liquidity and borrow indexes code](./notes/liquidity-index.md)
-    - [ ] TODO:? Why linear and compound interest?
-      - risk compensation -> strong incentive for borrowers to repay
-      - protocol revenue -> interest rate spread (graph)
-- Contract architecture
-  - [x] [Contract architecture](./notes/arc.png)
-  - Supply
-    - [x] Execution flow (tenderly)
-      - on behalf of
-    - [ ] linear interest
-      - `MathUtils.calculateLinearInterest`
-    - [Exercises](./foundry/exercises/supply.md)
-      - [Starter code](./foundry/src/exercises/Supply.sol)
-      - [Solution](./foundry/src/solutions/Supply.sol)
-  - Borrow
-    - [x] Execution flow (tenderly)
-      - credit delegation
-    - [ ] compound interest
-      - Why supply is linear and borrow is compound?
-      - TODO: [python approximation](./notes/binomial_expansion.ipynb)
-        - `MathUtils.calculateCompoundedInterest`
-    - [x] [Reserve factor](./notes/reserve-factor.md)
-    - [x] [LTV](./notes/ltv.png)
-    - [x] [Liquidation threshold](./notes/liquidation-threshold.png)
-    - [x] [Health factor](./notes/health-factor.png)
-      - [Code](https://github.com/aave-dao/aave-v3-origin/blob/5431379f8beb4d7128c84a81ced3917d856efa84/src/contracts/protocol/libraries/logic/GenericLogic.sol#L63-L183)
-    - [Exercises](./foundry/exercises/borrow.md)
-      - [Starter code](./foundry/src/exercises/Borrw.sol)
-      - [Solution](./foundry/src/solutions/Borrow.sol)
-  - Repay
-    - [x] Execution flow (tenderly)
-    - [Exercises](./foundry/exercises/repay.md)
-      - [Starter code](./foundry/src/exercises/Repay.sol)
-      - [Solution](./foundry/src/solutions/Repay.sol)
-  - Withdraw
-    - [x] Execution flow (tenderly)
-      - Conditions for withdraw (health factor)
-    - [Exercises](./foundry/exercises/withdraw.md)
-      - [Starter code](./foundry/src/exercises/Withdraw.sol)
-      - [Solution](./foundry/src/solutions/Withdraw.sol)
-  - Liquidation
-    - [ ] Execution flow (tenderly)?
-    - [x] [Close factor](./notes/close-factor.png)
-      - [Code](./notes/liquidation.md)
-      - `MIN_LEFTOVER_BASE`
-    - [x] [Math](./notes/liquidation.png)
-      - condition
-      - amount of collateral to liquidate
-      - bonus
-      - protocol fee
-      - [ ] [Code](./notes/liquidation.md)
-    - [ ] TODO: dust
-      - TODO: liquidate tx
-    - [Exercises](./foundry/exercises/liquidation.md)
-      - [Starter code](./foundry/src/exercises/Liquidation.sol)
-      - [Solution](./foundry/src/solutions/Liquidation.sol)
-  - Flash loan simple
-    - [x] [Execution flow](./notes/flash-loan.md)
-    - [Exercises](./foundry/exercises/flash.md)
-      - [Starter code](./foundry/src/exercises/Flash.sol)
-      - [Solution](./foundry/src/solutions/Flash.sol)
-- Long leverage and short
-  - [x] [Long leverage](./notes/long.png)
-  - [x] [Short](./notes/short.png)
-  - [x] Flash leverage
-  - [Exercises](./foundry/exercises/long-short.md)
-    - [Starter code](./foundry/src/exercises/LongShort.sol)
-    - [Solution](./foundry/src/solutions/LongShort.sol)
+  - Linear interest
+  - [Exercises](./foundry/exercises/supply.md)
+    - [Starter code](./foundry/src/exercises/Supply.sol)
+    - [Solution](./foundry/src/solutions/Supply.sol)
+- Borrow
+  - Execution flow
+    - [Borrow DAI](https://etherscan.io/tx/0x5e4deab9462bec720f883522d306ec306959cb3ae1ec2eaf0d55477eed01b5a4)
+  - [Compound interest](./notes/binomial_expansion.ipynb)
+  - [Reserve factor](./notes/reserve-factor.md)
+  - [LTV](./notes/ltv.png)
+  - [Liquidation threshold](./notes/liquidation-threshold.png)
+  - [Health factor](./notes/health-factor.png)
+  - [Exercises](./foundry/exercises/borrow.md)
+    - [Starter code](./foundry/src/exercises/Borrw.sol)
+    - [Solution](./foundry/src/solutions/Borrow.sol)
+- Repay
+  - Execution flow
+    - [Repay DAI](https://etherscan.io/tx/0x1145e9815060164ef9234bdbc6d88db97ac5dda7b1e30732dc981145604e0373)
+  - [Exercises](./foundry/exercises/repay.md)
+    - [Starter code](./foundry/src/exercises/Repay.sol)
+    - [Solution](./foundry/src/solutions/Repay.sol)
+- Withdraw
+  - Execution flow
+    - [Withdraw DAI](https://etherscan.io/tx/0x4e263e358db180ec478d61542a1126a47bba6d6fc0d5bb2b7b8cf83a8bdb11d3)
+  - [Exercises](./foundry/exercises/withdraw.md)
+    - [Starter code](./foundry/src/exercises/Withdraw.sol)
+    - [Solution](./foundry/src/solutions/Withdraw.sol)
+- Liquidation
+  - [Close factor](./notes/close-factor.png)
+  - [Math](./notes/liquidation.png)
+  - Liquidation dust
+  - [Exercises](./foundry/exercises/liquidation.md)
+    - [Starter code](./foundry/src/exercises/Liquidation.sol)
+    - [Solution](./foundry/src/solutions/Liquidation.sol)
+- Flash loan simple
+  - [Execution flow](./notes/flash-loan.md)
+  - [Exercises](./foundry/exercises/flash.md)
+    - [Starter code](./foundry/src/exercises/Flash.sol)
+    - [Solution](./foundry/src/solutions/Flash.sol)
 
-### Resources
+## Application
 
-##### Aave V3
+- [Long leverage](./notes/long.png)
+- [Short selling](./notes/short.png)
+- [Flash leverage](https://updraft.cyfrin.io/courses/rocket-pool-reth-integration)
+- [Exercises](./foundry/exercises/long-short.md)
+  - [Starter code](./foundry/src/exercises/LongShort.sol)
+  - [Solution](./foundry/src/solutions/LongShort.sol)
+
+## Resources
+
+### Aave V3
 
 - [App](https://app.aave.com/)
 - [Docs](https://aave.com/docs)
@@ -125,7 +87,7 @@
 - [Aave V3 book](https://calnix.gitbook.io/aave-book)
 - [Pool - proxy](https://etherscan.io/address/0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2)
 
-##### Transactions
+### Transactions
 
 - [Supply rETH tx](https://etherscan.io/tx/0xc1120138b3aa3dc6a49ef7e84ecd17530c273e2442f83e47025d819d9a700743)
 - [Supply ETH tx](https://etherscan.io/tx/0x21de14e5c58b9431a70b780893d01f0b82f07a0495d851d97fc0e85c64887610)
