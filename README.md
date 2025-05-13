@@ -56,7 +56,7 @@
 - Liquidation
   - [Close factor](./notes/close-factor.png)
   - [Math](./notes/liquidation.png)
-  - Liquidation dust
+  - Why my position is not liquidated?
   - [Exercises](./foundry/exercises/liquidation.md)
     - [Starter code](./foundry/src/exercises/Liquidation.sol)
     - [Solution](./foundry/src/solutions/Liquidation.sol)
