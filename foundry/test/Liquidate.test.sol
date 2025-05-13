@@ -2,10 +2,10 @@
 pragma solidity 0.8.28;
 
 import {Test, console} from "forge-std/Test.sol";
-import {IERC20} from "@src/interfaces/IERC20.sol";
-import {POOL, ORACLE, WETH, DAI} from "@src/Constants.sol";
-import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
-import {IAaveOracle} from "@src/interfaces/aave-v3/IAaveOracle.sol";
+import {IERC20} from "../src/interfaces/IERC20.sol";
+import {POOL, ORACLE, WETH, DAI} from "../src/Constants.sol";
+import {IPool} from "../src/interfaces/aave-v3/IPool.sol";
+import {IAaveOracle} from "../src/interfaces/aave-v3/IAaveOracle.sol";
 import {Liquidate} from "@exercises/Liquidate.sol";
 
 // forge test --fork-url $FORK_URL --match-path test/Liquidate.test.sol -vvv

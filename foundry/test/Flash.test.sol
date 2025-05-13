@@ -2,9 +2,9 @@
 pragma solidity 0.8.28;
 
 import {Test, console} from "forge-std/Test.sol";
-import {IERC20} from "@src/interfaces/IERC20.sol";
-import {POOL, WETH, DAI} from "@src/Constants.sol";
-import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
+import {IERC20} from "../src/interfaces/IERC20.sol";
+import {POOL, WETH, DAI} from "../src/Constants.sol";
+import {IPool} from "../src/interfaces/aave-v3/IPool.sol";
 import {Flash} from "@exercises/Flash.sol";
 
 contract FlashTest is Test {

@@ -2,9 +2,9 @@
 pragma solidity 0.8.28;
 
 import {Test, console} from "forge-std/Test.sol";
-import {IERC20} from "@src/interfaces/IERC20.sol";
-import {POOL, WETH} from "@src/Constants.sol";
-import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
+import {IERC20} from "../src/interfaces/IERC20.sol";
+import {POOL, WETH} from "../src/Constants.sol";
+import {IPool} from "../src/interfaces/aave-v3/IPool.sol";
 import {Withdraw} from "@exercises/Withdraw.sol";
 
 contract WithdrawTest is Test {

@@ -2,18 +2,18 @@
 pragma solidity 0.8.28;
 
 import {Test, console} from "forge-std/Test.sol";
-import {IERC20} from "@src/interfaces/IERC20.sol";
+import {IERC20} from "../src/interfaces/IERC20.sol";
 import {
     POOL,
     ORACLE,
     WETH,
     DAI,
     UNISWAP_V3_POOL_FEE_DAI_WETH
-} from "@src/Constants.sol";
-import {IPool} from "@src/interfaces/aave-v3/IPool.sol";
+} from "../src/Constants.sol";
+import {IPool} from "../src/interfaces/aave-v3/IPool.sol";
 import {IVariableDebtToken} from
-    "@src/interfaces/aave-v3/IVariableDebtToken.sol";
-import {IAaveOracle} from "@src/interfaces/aave-v3/IAaveOracle.sol";
+    "../src/interfaces/aave-v3/IVariableDebtToken.sol";
+import {IAaveOracle} from "../src/interfaces/aave-v3/IAaveOracle.sol";
 import {LongShort} from "@exercises/LongShort.sol";
 
 contract LongShortTest is Test {
