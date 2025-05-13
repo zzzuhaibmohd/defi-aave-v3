@@ -8,16 +8,10 @@ import {POOL} from "../Constants.sol";
 contract Flash {
     IPool public constant pool = IPool(POOL);
 
-    function flash(address token, uint256 amount) public {
-        pool.flashLoanSimple({
-            receiverAddress: address(this),
-            asset: token,
-            amount: amount,
-            params: abi.encode(msg.sender),
-            referralCode: 0
-        });
-    }
+    // Task 1 - Initiate flash loan
+    function flash(address token, uint256 amount) public {}
 
+    // Task 2 - Repay flash loan
     function executeOperation(
         address asset,
         uint256 amount,
@@ -25,14 +19,15 @@ contract Flash {
         address initiator,
         bytes calldata params
     ) public returns (bool) {
-        require(msg.sender == address(pool), "not authorized");
-        require(initiator == address(this), "invalid initiator");
+        // Task 2.1 - Check that msg.sender is the pool contract
 
-        address caller = abi.decode(params, (address));
-        IERC20(asset).transferFrom(caller, address(this), fee);
+        // Task 2.2 - Check that initiator is this contract
 
-        IERC20(asset).approve(msg.sender, amount + fee);
+        // Task 2.3 - Decode caller from params and transfer
+        // flash loan fee from this caller
 
-        return true;
+        // Task 2.4 - Approve the pool to spend flash loaned amount + fee
+
+        // Task 2.5 - Return true
     }
 }
