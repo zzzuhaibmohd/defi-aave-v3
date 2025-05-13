@@ -12,8 +12,10 @@ contract LongShort is Aave, Swap {
         uint256 collateralAmount;
         address borrowToken;
         uint256 borrowAmount;
+        // Minimum health factor after borrowing token
         uint256 minHealthFactor;
         uint256 minSwapAmountOut;
+        // Arbitrary data to be passed to the swap function
         bytes swapData;
     }
 

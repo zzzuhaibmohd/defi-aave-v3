@@ -1,31 +1,7 @@
 # DeFi Aave V3 (3.3)
 
-### TODO
-
-- natspec
-- exercise instructions
-  - don't use in production (tokens are locked)
-- NOTE: all exercise funcs are public
-
-```shell
-# Install
-forge build
-cp .env.sample .env
-
-# Test
-FORK_URL=...
-forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
-```
-
-- TODO: [Course intro](./notes/course-intro.md)
-- Setup (TODO)
-
-  - aave v3.3
-  - Python demo on [jupyter](https://jupyter.org/install)
-  - Tenderly + transaction links
-  - Using Foundry -> git clone + forge build
-  - How to solve exercises (show demo of tenderly)
-
+- [Course intro](./notes/course-intro.md)
+- [Setup](./notes/course-setup.md)
 - Intro
   - [ ] UI
     - supply
@@ -55,7 +31,8 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
           - E-Mode increases your LTV for a selected category of assets.
           - enable emode
       - repay
-- Core concepts - [x] [APY and APR](./notes/apr-apy.png)
+- Core concepts
+  - [x] [APY and APR](./notes/apr-apy.png)
   - [x] [Market forces](./notes/market-forces.png)
   - [x] [Utilization rate](./notes/utilization-rate.png)
   - [x] [Interest rate model - graph](https://www.desmos.com/calculator/2pfuulkndt)
@@ -119,6 +96,7 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
       - protocol fee
       - [ ] [Code](./notes/liquidation.md)
     - [ ] TODO: dust
+      - TODO: liquidate tx
     - [Exercises](./foundry/exercises/liquidation.md)
       - [Starter code](./foundry/src/exercises/Liquidation.sol)
       - [Solution](./foundry/src/solutions/Liquidation.sol)
@@ -160,7 +138,3 @@ forge test --fork-url $FORK_URL --match-path test/Supply.test.sol -vvv
 - [Borrow DAI](https://etherscan.io/tx/0x5e4deab9462bec720f883522d306ec306959cb3ae1ec2eaf0d55477eed01b5a4)
 - [Repay DAI](https://etherscan.io/tx/0x1145e9815060164ef9234bdbc6d88db97ac5dda7b1e30732dc981145604e0373)
 - [Borrow ETH](https://etherscan.io/tx/0xfe4b17b089b50bf9c2b00561061b4205e72bf9695c63e7fde31d54f299b9392f)
-
-##### Misc
-
-- [DeFiLama Swap](https://swap.defillama.com/)
