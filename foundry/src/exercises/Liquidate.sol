@@ -8,21 +8,16 @@ import {POOL} from "../Constants.sol";
 contract Liquidate {
     IPool public constant pool = IPool(POOL);
 
+    // Task 1 - Liquidate an under-collateralized loan
     function liquidate(address collateral, address borrowedToken, address user)
         public
     {
-        IPool.ReserveData memory reserve = pool.getReserveData(borrowedToken);
-        uint256 debt = IERC20(reserve.variableDebtTokenAddress).balanceOf(user);
+        // Task 1.1 - Get the amount of borrowed token that the user owes to Aave V3
 
-        IERC20(borrowedToken).transferFrom(msg.sender, address(this), debt);
-        IERC20(borrowedToken).approve(address(pool), debt);
+        // Task 1.2 - Transfer the full borrowed amount from msg.sender
 
-        pool.liquidationCall({
-            collateralAsset: collateral,
-            debtAsset: borrowedToken,
-            user: user,
-            debtToCover: debt,
-            receiveAToken: false
-        });
+        // Task 1.3 - Approve the pool contract to spend borrowed token from this contract
+
+        // Task 1.4 - Call liquidate
     }
 }
