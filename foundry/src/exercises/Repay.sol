@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 
+import {console} from "forge-std/Test.sol";
 import {IERC20} from "../interfaces/IERC20.sol";
 import {IPool} from "../interfaces/aave-v3/IPool.sol";
 import {IVariableDebtToken} from "../interfaces/aave-v3/IVariableDebtToken.sol";

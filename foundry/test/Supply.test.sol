@@ -23,11 +23,13 @@ contract SupplyTest is Test {
     }
 
     function test_supply() public {
+        uint256 wethBalBefore = weth.balanceOf(address(this));
         weth.approve(address(target), 1e18);
         target.supply(WETH, 1e18);
+        uint256 wethBalAfter = weth.balanceOf(address(this));
 
         assertEq(
-            weth.balanceOf(address(this)), 0, "WETH balance of test contract"
+            wethBalBefore - wethBalAfter, 1e18, "WETH balance of test contract"
         );
         assertEq(weth.balanceOf(address(target)), 0, "WETH balance of target");
         assertGt(aWeth.balanceOf(address(target)), 0, "aWETH balance of target");
