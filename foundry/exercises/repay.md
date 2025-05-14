@@ -9,7 +9,6 @@ Solution is provided in `foundry/src/solutions/Repay.sol`
 ## Task 1 - Repay all the debt owed to Aave V3
 
 ```solidity
-// Task 1 - Repay all the debt owed to Aave V3
 function repay(address token) public returns (uint256) {
     // Task 1.1
     // msg.sender will pay for the interest on borrow.

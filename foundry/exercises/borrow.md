@@ -9,7 +9,6 @@ Solution is provided in `foundry/src/solutions/Borrow.sol`
 ## Task 1 - Approximate the maximum amount of token that can be borrowed
 
 ```solidity
-// Task 1 - Approximate the maximum amount of token that can be borrowed
 function approxMaxBorrow(address token) public view returns (uint256) {
     // Task 1.1 - Get asset price from the oracle.
     // The price is returned with 8 decimals (1e8 = 1 USD)
@@ -35,7 +34,6 @@ Implement the `approxMaxBorrow(` function. This function will approximate the ma
 ## Task 2 - Get the health factor of this contract
 
 ```solidity
-// Task 2 - Get the health factor of this contract
 function getHealthFactor() public view returns (uint256) {}
 ```
 
@@ -46,7 +44,6 @@ Get the health factor of this contract
 ## Task 3 - Borrow token from Aave V3
 
 ```solidity
-// Task 3 - Borrow token from Aave V3
 function borrow(address token, uint256 amount) public {}
 ```
 
@@ -60,7 +57,6 @@ Borrow `token` from Aave V3
 ## Task 4 - Get variable debt balance of this contract
 
 ```solidity
-// Task 4 - Get variable debt balance of this contract
 function getVariableDebt(address token) public view returns (uint256) {
     // Task 4.1 - Get the variable debt token address from the pool contract
 
