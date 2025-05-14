@@ -1,9 +1,13 @@
 # DeFi Aave V3 (3.3)
 
+TODO: readme
+TODO: exercises
+
 ## Introduction
 
 - [Course intro](./notes/course-intro.md)
 - [Setup](./notes/course-setup.md)
+  - TODO: ad (alchemy + tenderly)
 
 ## Foundation
 
