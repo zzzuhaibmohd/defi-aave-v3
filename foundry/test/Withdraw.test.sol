@@ -30,7 +30,7 @@ contract WithdrawTest is Test {
 
     function test_withdraw() public {
         uint256 aWethBalBefore = aWeth.balanceOf(address(target));
-        uint256 withdrawn = target.withdraw(WETH, type(uint256).max);
+        uint256 withdrawn = target.withdraw(WETH);
         uint256 aWethBalAfter = aWeth.balanceOf(address(target));
 
         console.log("WETH balance: %e", aWethBalBefore);

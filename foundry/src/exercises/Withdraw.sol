@@ -29,7 +29,7 @@ contract Withdraw {
     }
 
     // Task 2 - Withdraw all of underlying token from Aave V3
-    function withdraw(address token, uint256 amount) public returns (uint256) {
+    function withdraw(address token) public returns (uint256) {
         // Task 2.1 - Withdraw all of underlying token from Aave V3
         // Task 2.2 - Return the amount that was withdrawn
     }
