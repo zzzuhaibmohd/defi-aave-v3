@@ -1,7 +1,6 @@
 # DeFi Aave V3 (3.3)
 
 TODO: readme
-TODO: exercises
 
 ## Introduction
 
