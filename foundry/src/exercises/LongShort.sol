@@ -7,6 +7,9 @@ import {Aave} from "../lib/Aave.sol";
 import {Swap} from "../lib/Swap.sol";
 import {Math} from "../lib/Math.sol";
 
+// NOTE: Don't use this contract in production.
+// Any caller can borrow on behalf of this contract and withdraw collateral from this contract.
+
 contract LongShort is Aave, Swap {
     struct OpenParams {
         address collateralToken;
@@ -22,33 +25,41 @@ contract LongShort is Aave, Swap {
 
     // Approve this contract to pull in collateral
     // Approve this contract to borrow
+    // Task 1 - Open a long or a short position
     function open(OpenParams memory params)
         public
         returns (uint256 collateralAmountOut)
     {
+        // Task 1.1 - Check that params.minHealthFactor is greater than 1e18
         require(params.minHealthFactor > 1e18, "min health factor <= 1");
 
-        // Transfer collateral
+        // Task 1.2 - Transfer collateral from msg.sender
         IERC20(params.collateralToken).transferFrom(
             msg.sender, address(this), params.collateralAmount
         );
 
-        // Supply collateral
+        // Task 1.3
+        // - Approve and supply collateral to Aave
+        // - Send aToken to msg.sender
         IERC20(params.collateralToken).approve(
             address(pool), params.collateralAmount
         );
         supply(params.collateralToken, params.collateralAmount, msg.sender);
 
-        // Borrow token
+        // Task 1.4
+        // - Borrow token from Aave
+        // - Borrow on behalf of msg.sender
         borrow(params.borrowToken, params.borrowAmount, msg.sender);
 
-        // Check health factor
+        // Task 1.5 - Check that health factor of msg.sender is > params.minHealthFactor
         require(
             getHealthFactor(msg.sender) >= params.minHealthFactor,
             "health factor < min"
         );
 
-        // Swap borrow token to collateral token
+        // Task 1.6
+        // - Swap borrowed token to collateral token
+        // - Send swapped token to msg.sender
         IERC20(params.borrowToken).approve(address(router), params.borrowAmount);
         return swap({
             tokenIn: params.borrowToken,
@@ -67,12 +78,14 @@ contract LongShort is Aave, Swap {
         address borrowToken;
         uint256 maxDebtToRepay;
         uint256 minSwapAmountOut;
+        // Arbitrary data to be passed to the swap function
         bytes swapData;
     }
 
     // Approve this contract to pull in collateral AToken
     // Approve this contract to pull in collateral
     // Approve this contract to pull in borrowed token if closing at a loss
+    // Task 2 - Close a long or a short position
     function close(CloseParams memory params)
         public
         returns (
@@ -81,12 +94,12 @@ contract LongShort is Aave, Swap {
             uint256 borrowedLeftover
         )
     {
-        // Transfer collateral
+        // Task 2.1 - Transfer collateral from msg.sender into this contract
         IERC20(params.collateralToken).transferFrom(
             msg.sender, address(this), params.collateralAmount
         );
 
-        // Swap collateral to borrow
+        // Task 2.2 - Swap collateral to borrowed token
         IERC20(params.collateralToken).approve(
             address(router), params.collateralAmount
         );
@@ -99,7 +112,11 @@ contract LongShort is Aave, Swap {
             data: params.swapData
         });
 
-        // Repay borrow
+        // Task 2.3
+        // - Repay borrowed token
+        // - Amount to repay is the minimum of current debt and params.maxDebtToRepay
+        // - If the amount to repay is greater that the amount swapped,
+        //   then transfer the difference from msg.sender
         uint256 debtToRepay = Math.min(
             getVariableDebt(params.borrowToken, msg.sender),
             params.maxDebtToRepay
@@ -115,7 +132,7 @@ contract LongShort is Aave, Swap {
         }
         repay(params.borrowToken, debtToRepay, msg.sender);
 
-        // Withdraw collateral to msg.sender
+        // Task 2.4 - Withdraw collateral to msg.sender
         IERC20 aToken = IERC20(getATokenAddress(params.collateralToken));
         aToken.transferFrom(
             msg.sender,
@@ -129,12 +146,14 @@ contract LongShort is Aave, Swap {
             params.collateralToken, params.maxCollateralToWithdraw, msg.sender
         );
 
-        // Transfer profit = swapped - repaid
+        // Task 2.5 - Transfer profit = swapped amount - repaid amount
         uint256 bal = IERC20(params.borrowToken).balanceOf(address(this));
         if (bal > 0) {
             IERC20(params.borrowToken).transfer(msg.sender, bal);
         }
 
+        // Task 2.6 - Return amount of collateral withdrawn,
+        //            debt repaid and profit from closing this position
         return (withdrawn, repayAmount, bal);
     }
 }

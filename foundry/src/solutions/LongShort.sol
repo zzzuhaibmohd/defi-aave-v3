@@ -7,6 +7,9 @@ import {Aave} from "../lib/Aave.sol";
 import {Swap} from "../lib/Swap.sol";
 import {Math} from "../lib/Math.sol";
 
+// NOTE: Don't use this contract in production.
+// Any caller can borrow on behalf of this contract and withdraw collateral from this contract.
+
 contract LongShort is Aave, Swap {
     struct OpenParams {
         address collateralToken;
@@ -46,7 +49,7 @@ contract LongShort is Aave, Swap {
             "health factor < min"
         );
 
-        // Swap borrow token to collateral token
+        // Swap borrowed token to collateral token
         IERC20(params.borrowToken).approve(address(router), params.borrowAmount);
         return swap({
             tokenIn: params.borrowToken,
@@ -84,7 +87,7 @@ contract LongShort is Aave, Swap {
             msg.sender, address(this), params.collateralAmount
         );
 
-        // Swap collateral to borrow
+        // Swap collateral to borrowed token
         IERC20(params.collateralToken).approve(
             address(router), params.collateralAmount
         );
@@ -97,7 +100,7 @@ contract LongShort is Aave, Swap {
             data: params.swapData
         });
 
-        // Repay borrow
+        // Repay borrowed token
         uint256 debtToRepay = Math.min(
             getVariableDebt(params.borrowToken, msg.sender),
             params.maxDebtToRepay
