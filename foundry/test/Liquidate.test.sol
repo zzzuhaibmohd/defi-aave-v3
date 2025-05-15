@@ -8,8 +8,6 @@ import {IPool} from "../src/interfaces/aave-v3/IPool.sol";
 import {IAaveOracle} from "../src/interfaces/aave-v3/IAaveOracle.sol";
 import {Liquidate} from "@exercises/Liquidate.sol";
 
-// forge test --fork-url $FORK_URL --match-path test/Liquidate.test.sol -vvv
-
 contract LiquidateTest is Test {
     IERC20 private constant weth = IERC20(WETH);
     IERC20 private constant dai = IERC20(DAI);
