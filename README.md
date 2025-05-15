@@ -40,7 +40,6 @@ Please refer to this for an in-depth explanation of the content:
 
 - [Course intro](./notes/course-intro.md)
 - [Setup](./notes/course-setup.md)
-  - TODO: ad (alchemy + tenderly)
 
 ## Foundation
 
