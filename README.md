@@ -42,7 +42,7 @@ TODO: readme
   - [Liquidation threshold](./notes/liquidation-threshold.png)
   - [Health factor](./notes/health-factor.png)
   - [Exercises](./foundry/exercises/borrow.md)
-    - [Starter code](./foundry/src/exercises/Borrw.sol)
+    - [Starter code](./foundry/src/exercises/Borrow.sol)
     - [Solution](./foundry/src/solutions/Borrow.sol)
 - Repay
   - Execution flow
@@ -60,9 +60,9 @@ TODO: readme
   - [Close factor](./notes/close-factor.png)
   - [Math](./notes/liquidation.png)
   - Why my position is not liquidated?
-  - [Exercises](./foundry/exercises/liquidation.md)
-    - [Starter code](./foundry/src/exercises/Liquidation.sol)
-    - [Solution](./foundry/src/solutions/Liquidation.sol)
+  - [Exercises](./foundry/exercises/liquidate.md)
+    - [Starter code](./foundry/src/exercises/Liquidate.sol)
+    - [Solution](./foundry/src/solutions/Liquidate.sol)
 - Flash loan simple
   - [Execution flow](./notes/flash-loan.md)
   - [Exercises](./foundry/exercises/flash.md)
