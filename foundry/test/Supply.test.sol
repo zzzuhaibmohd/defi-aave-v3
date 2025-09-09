@@ -39,4 +39,31 @@ contract SupplyTest is Test {
             "Supply balance"
         );
     }
+
+    function testFuzz_supply(uint256 amount) public {
+        uint256 wethBalBefore = weth.balanceOf(address(this));
+
+        amount = bound(amount, 1e18, weth.balanceOf(address(this)));
+        weth.approve(address(target), amount);
+        target.supply(WETH, amount);
+
+        uint256 wethBalAfter = weth.balanceOf(address(this));
+
+        // WETH balance of msg.sender should be equal to the amount supplied
+        assertEq(
+            wethBalBefore - wethBalAfter,
+            amount,
+            "WETH balance of test contract"
+        );
+        // WETH balance should be zero because it was transferred to the aave v3 pool
+        assertEq(weth.balanceOf(address(target)), 0, "WETH balance of target");
+        // aWETH balance of target should be greater than zero because it was transferred from the aave v3 pool
+        assertGt(aWeth.balanceOf(address(target)), 0, "aWETH balance of target");
+        // Supply balance should be equal to the aWETH balance of target
+        assertEq(
+            target.getSupplyBalance(WETH),
+            aWeth.balanceOf(address(target)),
+            "Supply balance"
+        );
+    }
 }
