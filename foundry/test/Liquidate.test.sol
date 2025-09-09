@@ -51,8 +51,9 @@ contract LiquidateTest is Test {
         target = new Liquidate();
 
         // Approve target to spend DAI
-        deal(DAI, address(this), 1000 * 1e18);
-        dai.approve(address(target), 1000 * 1e18);
+        // @note: Change to 1000 ether and test it
+        deal(DAI, address(this), 2000 * 1e18);
+        dai.approve(address(target), 2000 * 1e18);
     }
 
     function test_liquidate() public {
